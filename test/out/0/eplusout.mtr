@@ -1,0 +1,15 @@
+Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.20 16:19
+1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
+2,6,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
+3,3,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Meters Requested
+4,2,Cumulative Days of Simulation[],Month[]  ! When Monthly Meters Requested
+5,1,Cumulative Days of Simulation[] ! When Run Period Meters Requested
+41,11,Electricity:Facility [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+1440,11,Gas:Facility [J] !RunPeriod [Value,Min,Month,Day,Hour,Minute,Max,Month,Day,Hour,Minute]
+End of Data Dictionary
+1,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,  41.98, -87.92,  -6.00, 201.00
+5,365
+41,8303972601873.51,77124291.4933153, 1, 1, 1,45,558760133.657831, 7,19,15,60
+1440,3468229633037.81,0.0, 1, 1, 1,45,1062549720.19214,11, 6, 7,15
+End of Data
+ Number of Records Written=           2

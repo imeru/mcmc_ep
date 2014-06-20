@@ -1,0 +1,642 @@
+Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.20 16:19
+! <Version>, Version ID
+ Version, 8.1.0
+! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
+ Timesteps per Hour,  4, 15
+! <System Convergence Limits>, Minimum System TimeStep {minutes}, Max HVAC Iterations,  Minimum Plant Iterations, Maximum Plant Iterations
+ System Convergence Limits, 5, 25, 2, 8
+! <Simulation Control>, Do Zone Sizing, Do System Sizing, Do Plant Sizing, Do Design Days, Do Weather Simulation
+ Simulation Control, Yes, Yes, Yes, No, Yes
+! <Output Reporting Tolerances>, Tolerance for Time Heating Setpoint Not Met, Tolerance for Zone Cooling Setpoint Not Met Time
+ Output Reporting Tolerances, 0.200, 0.200, 
+! <Site:GroundTemperature:BuildingSurface>, Months From Jan to Dec {C}
+ Site:GroundTemperature:BuildingSurface,  19.56,  19.52,  19.56,  19.61,  19.80,  21.71,  22.25,  22.08,  20.95,  20.02,  19.80,  19.64
+! <Site:GroundTemperature:FCfactorMethod>, Months From Jan to Dec {C}
+ Site:GroundTemperature:FCfactorMethod,  -1.89,  -3.06,  -0.99,   2.23,  10.68,  17.20,  21.60,  22.94,  20.66,  15.60,   8.83,   2.56
+! <Site:GroundTemperature:Shallow>, Months From Jan to Dec {C}
+ Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
+! <Site:GroundTemperature:Deep>, Months From Jan to Dec {C}
+ Site:GroundTemperature:Deep,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00,  16.00
+! <Site:GroundReflectance>, Months From Jan to Dec {dimensionless}
+ Site:GroundReflectance,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:SnowModifier>, Normal, Daylighting {dimensionless}
+ Site:GroundReflectance:SnowModifier,   1.000,   1.000
+! <Site:GroundReflectance:Snow>, Months From Jan to Dec {dimensionless}
+ Site:GroundReflectance:Snow,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Site:GroundReflectance:Snow:Daylighting>, Months From Jan to Dec {dimensionless}
+ Site:GroundReflectance:Snow:Daylighting,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20,  0.20
+! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient [Internal],Temperature Modifier Coefficient [Internal]
+Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
+! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
+Site:Location,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,41.98,-87.92,-6.00,201.00,98934,1.1759
+! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
+ Building Information,campus building,0.000,City,4.00000E-002,0.20000,FullInteriorAndExterior,25,6
+! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
+Inside Convection Algorithm,TARP
+! <Outside Convection Algorithm>, Algorithm {SimpleCombined | TARP | MoWitt | DOE-2 | AdaptiveConvectionAlgorithm}
+Outside Convection Algorithm,DOE-2
+! <Sky Radiance Distribution>, Value {Anisotropic}
+Sky Radiance Distribution,Anisotropic
+! <Zone Air Solution Algorithm>, Value {ThirdOrderBackwardDifference | AnalyticalSolution | EulerMethod}
+ Zone Air Solution Algorithm, AnalyticalSolution
+! <Zone Air Contaminant Balance Simulation>, Simulation {Yes/No}, Carbon Dioxide Concentration
+ Zone Air Carbon Dioxide Balance Simulation, No,N/A
+! <Zone Air Contaminant Balance Simulation>, Simulation {Yes/No}, Generic Contaminant Concentration
+ Zone Air Generic Contaminant Balance Simulation, No,N/A
+! <Environment:Site Atmospheric Variation>,Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Gradient Coefficient {K/m}
+Environment:Site Atmospheric Variation,0.330,460.000,6.500000E-003
+! <SurfaceGeometry>,Starting Corner,Vertex Input Direction,Coordinate System,Daylight Reference Point Coordinate System,Rectangular (Simple) Surface Coordinate System
+ Surface Geometry,UpperLeftCorner,Counterclockwise,RelativeCoordinateSystem,RelativeCoordinateSystem,RelativeToZoneOrigin
+! <Surface Heat Transfer Algorithm>, Value {CTF - ConductionTransferFunction | EMPD - MoisturePenetrationDepthConductionTransferFunction | CondFD - ConductionFiniteDifference | HAMT - CombinedHeatAndMoistureFiniteElement} - Description,Inside Surface Max Temperature Limit{C}, Surface Convection Coefficient Lower Limit {W/m2-K}, Surface Convection Coefficient Upper Limit {W/m2-K}
+Surface Heat Transfer Algorithm, CTF - ConductionTransferFunction,200,0.10,1000.0
+! <Shading Summary>, Number of Fixed Detached Shades, Number of Building Detached Shades, Number of Attached Shades
+ Shading Summary,0,0,0
+! <Zone Summary>, Number of Zones, Number of Zone Surfaces, Number of SubSurfaces
+ Zone Summary,15,105,0
+! <Zone Information>,Zone Name,North Axis {deg},Origin X-Coordinate {m},Origin Y-Coordinate {m},Origin Z-Coordinate {m},Centroid X-Coordinate {m},Centroid Y-Coordinate {m},Centroid Z-Coordinate {m},Type,Zone Multiplier,Zone List Multiplier,Minimum X {m},Maximum X {m},Minimum Y {m},Maximum Y {m},Minimum Z {m},Maximum Z {m},Ceiling Height {m},Volume {m3},Zone Inside Convection Algorithm {Simple-Detailed-CeilingDiffuser-TrombeWall},Zone Outside Convection Algorithm {Simple-Detailed-Tarp-MoWitt-DOE-2-BLAST}, Floor Area {m2},Exterior Gross Wall Area {m2},Exterior Net Wall Area {m2},Exterior Window Area {m2}, Number of Surfaces, Number of SubSurfaces, Number of Shading SubSurfaces,  Part of Total Building Area
+ Zone Information, ZN_1_FLR_1_SEC_1,0.0,0.00,0.00,0.00,35.95,2.19,1.90,1,1,1,0.00,71.89,0.00,4.57,0.00,3.80,3.80,1169.12,TARP,DOE-2,307.66,273.19,273.19,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_2_SEC_1,0.0,0.00,0.00,7.60,35.95,2.19,9.50,1,2,1,0.00,71.89,0.00,4.57,7.60,11.40,3.80,1169.12,TARP,DOE-2,307.66,273.19,273.19,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_3_SEC_1,0.0,0.00,0.00,15.20,35.95,2.19,17.10,1,1,1,0.00,71.89,0.00,4.57,15.20,19.00,3.80,1169.12,TARP,DOE-2,307.66,273.19,273.19,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_1_SEC_2,0.0,71.89,0.00,0.00,69.80,17.97,1.90,1,1,1,67.32,71.89,0.00,35.95,0.00,3.80,3.80,544.88,TARP,DOE-2,143.39,136.60,136.60,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_2_SEC_2,0.0,71.89,0.00,7.60,69.80,17.97,9.50,1,2,1,67.32,71.89,0.00,35.95,7.60,11.40,3.80,544.88,TARP,DOE-2,143.39,136.60,136.60,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_3_SEC_2,0.0,71.89,0.00,15.20,69.80,17.97,17.10,1,1,1,67.32,71.89,0.00,35.95,15.20,19.00,3.80,544.88,TARP,DOE-2,143.39,136.60,136.60,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_1_SEC_3,0.0,4.57,31.38,0.00,35.95,33.76,1.90,1,1,1,0.00,71.89,31.38,35.95,0.00,3.80,3.80,1169.12,TARP,DOE-2,307.66,273.19,273.19,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_2_SEC_3,0.0,4.57,31.38,7.60,35.95,33.76,9.50,1,2,1,0.00,71.89,31.38,35.95,7.60,11.40,3.80,1169.12,TARP,DOE-2,307.66,273.19,273.19,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_3_SEC_3,0.0,4.57,31.38,15.20,35.95,33.76,17.10,1,1,1,0.00,71.89,31.38,35.95,15.20,19.00,3.80,1169.12,TARP,DOE-2,307.66,273.19,273.19,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_1_SEC_4,0.0,0.00,0.00,0.00,2.09,17.97,1.90,1,1,1,0.00,4.57,0.00,35.95,0.00,3.80,3.80,544.88,TARP,DOE-2,143.39,136.60,136.60,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_2_SEC_4,0.0,0.00,0.00,7.60,2.09,17.97,9.50,1,2,1,0.00,4.57,0.00,35.95,7.60,11.40,3.80,544.88,TARP,DOE-2,143.39,136.60,136.60,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_3_SEC_4,0.0,0.00,0.00,15.20,2.09,17.97,17.10,1,1,1,0.00,4.57,0.00,35.95,15.20,19.00,3.80,544.88,TARP,DOE-2,143.39,136.60,136.60,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_1_SEC_5,0.0,4.57,4.57,0.00,35.95,17.97,1.90,1,1,1,4.57,67.32,4.57,31.38,0.00,3.80,3.80,6392.16,TARP,DOE-2,1682.14,0.00,0.00,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_2_SEC_5,0.0,4.57,4.57,7.60,35.95,17.97,9.50,1,2,1,4.57,67.32,4.57,31.38,7.60,11.40,3.80,6392.16,TARP,DOE-2,1682.14,0.00,0.00,0.00,6,0,0,Yes
+ Zone Information, ZN_1_FLR_3_SEC_5,0.0,4.57,4.57,15.20,35.95,17.97,17.10,1,1,1,4.57,67.32,4.57,31.38,15.20,19.00,3.80,6392.16,TARP,DOE-2,1682.14,0.00,0.00,0.00,6,0,0,Yes
+! <Zone Internal Gains/Equipment Information - Nominal>,Zone Name, Floor Area {m2},# Occupants,Area per Occupant {m2/person},Occupant per Area {person/m2},Interior Lighting {W/m2},Electric Load {W/m2},Gas Load {W/m2},Other Load {W/m2},Hot Water Eq {W/m2},Steam Equipment {W/m2},Sum Loads per Area {W/m2},Outdoor Controlled Baseboard Heat
+ Zone Internal Gains, ZN_1_FLR_1_SEC_1,307.66,13.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_2_SEC_1,307.66,13.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_3_SEC_1,307.66,13.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_1_SEC_2,143.39,6.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_2_SEC_2,143.39,6.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_3_SEC_2,143.39,6.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_1_SEC_3,307.66,13.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_2_SEC_3,307.66,13.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_3_SEC_3,307.66,13.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_1_SEC_4,143.39,6.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_2_SEC_4,143.39,6.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_3_SEC_4,143.39,6.1,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_1_SEC_5,1682.14,71.9,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_2_SEC_5,1682.14,71.9,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+ Zone Internal Gains, ZN_1_FLR_3_SEC_5,1682.14,71.9,23.400,4.274E-002,14.500,22.800,0.000,0.000,0.000,0.000,37.300,No
+! <People Internal Gains - Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Number of People {},People/Floor Area {person/m2},Floor Area per person {m2/person},Fraction Radiant,Fraction Convected,Sensible Fraction Calculation,Activity level,ASHRAE 55 Warnings,Carbon Dioxide Generation Rate,Nominal Minimum Number of People,Nominal Maximum Number of People,MRT Calculation Type,Work Efficiency, Clothing Insulation Calculation Method,Clothing Insulation Calculation Method Schedule,Clothing,Air Velocity,Fanger Calculation,Pierce Calculation,KSU Calculation
+ People Internal Gains, ZN_1_FLR_1_SEC_1 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_1,307.66,13.1,13.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,13,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_2_SEC_1 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_2_SEC_1,307.66,13.1,13.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,13,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_3_SEC_1 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_3_SEC_1,307.66,13.1,13.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,13,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_1_SEC_2 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_2,143.39,6.1,6.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,6,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_2_SEC_2 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_2_SEC_2,143.39,6.1,6.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,6,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_3_SEC_2 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_3_SEC_2,143.39,6.1,6.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,6,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_1_SEC_3 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_3,307.66,13.1,13.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,13,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_2_SEC_3 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_2_SEC_3,307.66,13.1,13.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,13,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_3_SEC_3 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_3_SEC_3,307.66,13.1,13.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,13,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_1_SEC_4 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_4,143.39,6.1,6.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,6,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_2_SEC_4 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_2_SEC_4,143.39,6.1,6.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,6,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_3_SEC_4 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_3_SEC_4,143.39,6.1,6.1,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,6,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_1_SEC_5 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_1_SEC_5,1682.14,71.9,71.9,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,72,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_2_SEC_5 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_2_SEC_5,1682.14,71.9,71.9,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,72,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+ People Internal Gains, ZN_1_FLR_3_SEC_5 PEOPLE,BLDG_OCC_SCH,ZN_1_FLR_3_SEC_5,1682.14,71.9,71.9,4.274E-002,23.400,0.300,0.700,AutoCalculate,ACTIVITY_SCH,No,3.8200E-008,0,72,Zone Averaged,WORK_EFF_SCH,Clothing Insulation Schedule,N/A,CLOTHING_SCH,AIR_VELO_SCH,Yes,No,No
+! <Lights Internal Gains - Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Lighting Level {W},Lights/Floor Area {W/m2},Lights per person {W/person},Fraction Return Air,Fraction Radiant,Fraction Short Wave,Fraction Convected,Fraction Replaceable,End-Use Category,Nominal Minimum Lighting Level {W},Nominal Maximum Lighting Level {W}
+ Lights Internal Gains, ZN_1_FLR_1_SEC_1_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_1,307.66,13.1,4461.112,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,4461.112
+ Lights Internal Gains, ZN_1_FLR_2_SEC_1_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_2_SEC_1,307.66,13.1,4461.112,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,4461.112
+ Lights Internal Gains, ZN_1_FLR_3_SEC_1_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_3_SEC_1,307.66,13.1,4461.112,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,4461.112
+ Lights Internal Gains, ZN_1_FLR_1_SEC_2_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_2,143.39,6.1,2079.137,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,2079.137
+ Lights Internal Gains, ZN_1_FLR_2_SEC_2_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_2_SEC_2,143.39,6.1,2079.137,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,2079.137
+ Lights Internal Gains, ZN_1_FLR_3_SEC_2_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_3_SEC_2,143.39,6.1,2079.137,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,2079.137
+ Lights Internal Gains, ZN_1_FLR_1_SEC_3_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_3,307.66,13.1,4461.112,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,4461.112
+ Lights Internal Gains, ZN_1_FLR_2_SEC_3_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_2_SEC_3,307.66,13.1,4461.112,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,4461.112
+ Lights Internal Gains, ZN_1_FLR_3_SEC_3_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_3_SEC_3,307.66,13.1,4461.112,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,4461.112
+ Lights Internal Gains, ZN_1_FLR_1_SEC_4_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_4,143.39,6.1,2079.137,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,2079.137
+ Lights Internal Gains, ZN_1_FLR_2_SEC_4_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_2_SEC_4,143.39,6.1,2079.137,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,2079.137
+ Lights Internal Gains, ZN_1_FLR_3_SEC_4_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_3_SEC_4,143.39,6.1,2079.137,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,2079.137
+ Lights Internal Gains, ZN_1_FLR_1_SEC_5_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_1_SEC_5,1682.14,71.9,24391.094,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,24391.094
+ Lights Internal Gains, ZN_1_FLR_2_SEC_5_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_2_SEC_5,1682.14,71.9,24391.094,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,24391.094
+ Lights Internal Gains, ZN_1_FLR_3_SEC_5_LIGHTS,BLDG_LIGHT_SCH,ZN_1_FLR_3_SEC_5,1682.14,71.9,24391.094,14.500,339.300,0.000,0.700,0.200,0.100,1.000,General,0.000,24391.094
+! <ElectricEquipment Internal Gains - Nominal>,Name,Schedule Name,Zone Name,Zone Floor Area {m2},# Zone Occupants,Equipment Level {W},Equipment/Floor Area {W/m2},Equipment per person {W/person},Fraction Latent,Fraction Radiant,Fraction Lost,Fraction Convected,End-Use SubCategory,Nominal Minimum Equipment Level {W},Nominal Maximum Equipment Level {W}
+ ElectricEquipment Internal Gains, ZN_1_FLR_1_SEC_1_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_1,307.66,13.1,7014.714,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,7014.714
+ ElectricEquipment Internal Gains, ZN_1_FLR_2_SEC_1_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_2_SEC_1,307.66,13.1,7014.714,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,7014.714
+ ElectricEquipment Internal Gains, ZN_1_FLR_3_SEC_1_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_3_SEC_1,307.66,13.1,7014.714,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,7014.714
+ ElectricEquipment Internal Gains, ZN_1_FLR_1_SEC_2_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_2,143.39,6.1,3269.264,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,3269.264
+ ElectricEquipment Internal Gains, ZN_1_FLR_2_SEC_2_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_2_SEC_2,143.39,6.1,3269.264,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,3269.264
+ ElectricEquipment Internal Gains, ZN_1_FLR_3_SEC_2_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_3_SEC_2,143.39,6.1,3269.264,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,3269.264
+ ElectricEquipment Internal Gains, ZN_1_FLR_1_SEC_3_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_3,307.66,13.1,7014.714,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,7014.714
+ ElectricEquipment Internal Gains, ZN_1_FLR_2_SEC_3_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_2_SEC_3,307.66,13.1,7014.714,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,7014.714
+ ElectricEquipment Internal Gains, ZN_1_FLR_3_SEC_3_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_3_SEC_3,307.66,13.1,7014.714,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,7014.714
+ ElectricEquipment Internal Gains, ZN_1_FLR_1_SEC_4_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_4,143.39,6.1,3269.264,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,3269.264
+ ElectricEquipment Internal Gains, ZN_1_FLR_2_SEC_4_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_2_SEC_4,143.39,6.1,3269.264,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,3269.264
+ ElectricEquipment Internal Gains, ZN_1_FLR_3_SEC_4_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_3_SEC_4,143.39,6.1,3269.264,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,3269.264
+ ElectricEquipment Internal Gains, ZN_1_FLR_1_SEC_5_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_1_SEC_5,1682.14,71.9,38352.893,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,38352.893
+ ElectricEquipment Internal Gains, ZN_1_FLR_2_SEC_5_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_2_SEC_5,1682.14,71.9,38352.893,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,38352.893
+ ElectricEquipment Internal Gains, ZN_1_FLR_3_SEC_5_PLUGMISC_EQUIP,BLDG_EQUIP_SCH,ZN_1_FLR_3_SEC_5,1682.14,71.9,38352.893,22.800,533.520,0.000,0.500,0.000,0.500,PlugMisc,0.000,38352.893
+! <Construction CTF>,Construction Name,Index,#Layers,#CTFs,Time Step {hours},ThermalConductance {w/m2-K},OuterThermalAbsorptance,InnerThermalAbsorptance,OuterSolarAbsorptance,InnerSolarAbsorptance,Roughness
+! <Material CTF Summary>,Material Name,Thickness {m},Conductivity {w/m-K},Density {kg/m3},Specific Heat {J/kg-K},ThermalResistance {m2-K/w}
+! <Material:Air>,Material Name,ThermalResistance {m2-K/w}
+! <CTF>,Time,Outside,Cross,Inside,Flux (except final one)
+ Construction CTF,INTERIORFURNISHINGS,   1,   1,   7,   0.250,     0.8000    ,   0.900,   0.900,   0.700,   0.700,MediumSmooth
+ Material CTF Summary,STD WOOD 6INCH,  0.1500,         0.120,    540.000,     1210.000,   1.250    
+ CTF,   7,     -0.19879948E-01,      0.18371110E-08,     -0.19879948E-01,      0.25920384E-02
+ CTF,   6,      0.37833182    ,      0.93111392E-06,      0.37833182    ,     -0.50805208E-01
+ CTF,   5,      -2.8822885    ,      0.33090332E-04,      -2.8822885    ,      0.40100636    
+ CTF,   4,       11.391948    ,      0.23980383E-03,       11.391948    ,      -1.6521297    
+ CTF,   3,      -25.286828    ,      0.46344169E-03,      -25.286828    ,       3.8446603    
+ CTF,   2,       31.657742    ,      0.23933549E-03,       31.657742    ,      -5.0707043    
+ CTF,   1,      -20.807361    ,      0.25331892E-04,      -20.807361    ,       3.5241279    
+ CTF,   0,       5.5693388    ,      0.18852057E-06,       5.5693388    
+ Construction CTF,INT-FLOOR-TOPSIDE,   2,   2,   7,   0.250,      3.003    ,   0.900,   0.900,   0.700,   0.700,Rough
+ Material CTF Summary,STD MAT-CC05 4  MW CONCRETE,  0.1000,         0.858,   1968.000,      836.800,  0.1166    
+ Material CTF Summary,STD CP02 CARPET PAD,  0.0000,         0.000,      0.000,        0.000,  0.2165    
+ CTF,   7,      0.18392715E-15,      0.76657524E-15,     -0.80009586E-14,       0.0000000    
+ CTF,   6,      0.56531435E-06,      0.16829498E-08,      0.49017391E-07,     -0.36294500E-08
+ CTF,   5,     -0.58528466E-03,      0.57958867E-05,     -0.36451136E-04,      0.40527135E-05
+ CTF,   4,      0.12199005    ,      0.12291953E-02,      0.63023824E-02,     -0.10014442E-02
+ CTF,   3,      -4.4946110    ,      0.31344859E-01,     -0.25619385    ,      0.49153589E-01
+ CTF,   2,       31.930932    ,      0.12315680    ,       2.4084319    ,     -0.50485004    
+ CTF,   1,      -62.073763    ,      0.73569385E-01,      -6.2046027    ,       1.3792008    
+ CTF,   0,       34.748728    ,      0.33855014E-02,       4.2787893    
+ Construction CTF,INT-FLOOR-UNDERSIDE,   3,   2,   7,   0.250,      3.003    ,   0.900,   0.900,   0.700,   0.700,VeryRough
+ Material CTF Summary,STD CP02 CARPET PAD,  0.0000,         0.000,      0.000,        0.000,  0.2165    
+ Material CTF Summary,STD MAT-CC05 4  MW CONCRETE,  0.1000,         0.858,   1968.000,      836.800,  0.1166    
+ CTF,   7,     -0.80009586E-14,      0.76657524E-15,      0.18392715E-15,       0.0000000    
+ CTF,   6,      0.49017391E-07,      0.16829498E-08,      0.56531435E-06,     -0.36294500E-08
+ CTF,   5,     -0.36451136E-04,      0.57958867E-05,     -0.58528466E-03,      0.40527135E-05
+ CTF,   4,      0.63023824E-02,      0.12291953E-02,      0.12199005    ,     -0.10014442E-02
+ CTF,   3,     -0.25619385    ,      0.31344859E-01,      -4.4946110    ,      0.49153589E-01
+ CTF,   2,       2.4084319    ,      0.12315680    ,       31.930932    ,     -0.50485004    
+ CTF,   1,      -6.2046027    ,      0.73569385E-01,      -62.073763    ,       1.3792008    
+ CTF,   0,       4.2787893    ,      0.33855014E-02,       34.748728    
+ Construction CTF,INT-FLOOR-SLAB,   4,   1,   5,   0.250,      8.580    ,   0.900,   0.900,   0.700,   0.700,Rough
+ Material CTF Summary,STD MAT-CC05 4  MW CONCRETE,  0.1000,         0.858,   1968.000,      836.800,  0.1166    
+ CTF,   5,     -0.68992959E-04,      0.21529580E-05,     -0.68992959E-04,      0.44296535E-06
+ CTF,   4,      0.29455749E-01,      0.20633463E-02,      0.29455749E-01,     -0.22456453E-03
+ CTF,   3,      -1.7408135    ,      0.12312231    ,      -1.7408135    ,      0.17547365E-01
+ CTF,   2,       18.464068    ,      0.88201974    ,       18.464068    ,     -0.26309921    
+ CTF,   1,      -49.556120    ,      0.86814714    ,      -49.556120    ,       1.0190546    
+ CTF,   0,       34.748748    ,      0.69914268E-01,       34.748748    
+ Construction CTF,DROPCEILING,   5,   1,   3,   0.250,      4.488    ,   0.900,   0.900,   0.700,   0.700,MediumSmooth
+ Material CTF Summary,STD AC02,  0.0127,         0.057,    288.000,     1339.000,  0.2228    
+ CTF,   3,     -0.53260828E-14,      0.38590732E-14,     -0.53260829E-14,       0.0000000    
+ CTF,   2,      0.29572608E-03,      0.17480917E-03,      0.29572608E-03,     -0.50670342E-13
+ CTF,   1,      -1.7155691    ,       1.0037059    ,      -1.7155691    ,      0.66704272E-03
+ CTF,   0,       6.2004685    ,       3.4813145    ,       6.2004685    
+ Construction CTF,INT-CEILING_SIMPLE,   6,   1,   3,   0.250,      6.021    ,   0.900,   0.900,   0.700,   0.700,MediumSmooth
+ Material CTF Summary,PW05_PLYWOOD3/4_IN,  0.0191,         0.115,    545.000,     1213.000,  0.1661    
+ CTF,   3,     -0.32738692E-07,      0.23718841E-07,     -0.32738692E-07,      0.81255402E-17
+ CTF,   2,      0.25461972E-01,      0.15021694E-01,      0.25461972E-01,     -0.12080380E-06
+ CTF,   1,      -4.5033947    ,       2.3761500    ,      -4.5033947    ,      0.22264630E-01
+ CTF,   0,       10.364822    ,       3.4957174    ,       10.364822    
+ Construction CTF,RAISED-FLOOR-TOPSIDE,   7,   2,   4,   0.250,      3.835    ,   0.900,   0.900,   0.700,   0.700,Rough
+ Material CTF Summary,STD 1.5  MW CONCRETE,  0.0380,         0.858,   1968.000,      836.800,  0.4429E-01
+ Material CTF Summary,STD CP02 CARPET PAD,  0.0000,         0.000,      0.000,        0.000,  0.2165    
+ CTF,   4,      0.69172385E-10,      0.26645246E-11,      0.35641404E-12,      0.60050424E-17
+ CTF,   3,     -0.15520002E-02,      0.38213103E-04,     -0.28608971E-05,      0.20899534E-09
+ CTF,   2,       4.0948628    ,      0.10284425    ,      0.10257528E-01,     -0.69263475E-03
+ CTF,   1,      -44.432766    ,       1.4725479    ,      -1.9688371    ,      0.40309121    
+ CTF,   0,       42.631143    ,      0.71625868    ,       4.2502708    
+ Construction CTF,RAISED-FLOOR-UNDERSIDE,   8,   2,   4,   0.250,      3.835    ,   0.900,   0.900,   0.700,   0.700,VeryRough
+ Material CTF Summary,STD CP02 CARPET PAD,  0.0000,         0.000,      0.000,        0.000,  0.2165    
+ Material CTF Summary,STD 1.5  MW CONCRETE,  0.0380,         0.858,   1968.000,      836.800,  0.4429E-01
+ CTF,   4,      0.35641404E-12,      0.26645246E-11,      0.69172385E-10,      0.60050424E-17
+ CTF,   3,     -0.28608971E-05,      0.38213103E-04,     -0.15520002E-02,      0.20899534E-09
+ CTF,   2,      0.10257528E-01,      0.10284425    ,       4.0948628    ,     -0.69263475E-03
+ CTF,   1,      -1.9688371    ,       1.4725479    ,      -44.432766    ,      0.40309121    
+ CTF,   0,       4.2502708    ,      0.71625868    ,       42.631143    
+ Construction CTF,TDD_PIPE,   9,   1,   2,   0.250,     0.4740E+06,   0.900,   0.900,   0.050,   0.050,Smooth
+ Material CTF Summary,STD VERY HIGH REFLECTIVITY SURFACE,  0.0005,       237.000,   2702.000,      903.000,  0.2110E-05
+ CTF,   2,      0.58920142E-11,      0.34828821E-11,      0.58920142E-11,       0.0000000    
+ CTF,   1,     -0.42675782    ,      0.25099385    ,     -0.42675782    ,      0.53353338E-10
+ CTF,   0,       474000.43    ,       473999.75    ,       474000.43    
+ Construction CTF,SLOPED_METAL_ROOF,  12,   2,   3,   0.250,      6.020    ,   0.900,   0.900,   0.920,   0.780,Smooth
+ Material CTF Summary,STD STEEL_BROWN_REGULAR,  0.0015,        44.970,   7689.000,      418.000,  0.3336E-04
+ Material CTF Summary,STD PW05,  0.0191,         0.115,    545.000,     1213.000,  0.1661    
+ CTF,   3,     -0.18008955E-06,      0.41497022E-08,     -0.48079054E-08,      0.23223276E-16
+ CTF,   2,      0.14255351    ,      0.10509542E-01,      0.19701929E-01,     -0.26212081E-07
+ CTF,   1,      -10.334316    ,       2.2542588    ,      -4.4558670    ,      0.19092476E-01
+ CTF,   0,       16.096565    ,       3.6400339    ,       10.340967    
+ Construction CTF,GABLE_WALL,  13,   1,   3,   0.250,      6.021    ,   0.900,   0.900,   0.780,   0.780,MediumSmooth
+ Material CTF Summary,STD PW05,  0.0191,         0.115,    545.000,     1213.000,  0.1661    
+ CTF,   3,     -0.32738636E-07,      0.23718801E-07,     -0.32738636E-07,      0.81255278E-17
+ CTF,   2,      0.25461961E-01,      0.15021687E-01,      0.25461961E-01,     -0.12080360E-06
+ CTF,   1,      -4.5033944    ,       2.3761499    ,      -4.5033944    ,      0.22264621E-01
+ CTF,   0,       10.364822    ,       3.4957178    ,       10.364822    
+ Construction CTF,AIR-WALL,  14,   1,   1,   0.250,      4.809    ,   0.900,   0.900,   0.700,   0.700,Rough
+ Material CTF Summary,MAT-AIR-WALL,  0.0000,         0.000,      0.000,        0.000,  0.2079    
+ CTF,   1,       0.0000000    ,       0.0000000    ,       0.0000000    ,       0.0000000    
+ CTF,   0,       4.8088691    ,       4.8088691    ,       4.8088691    
+ Construction CTF,STD SWINGING DOOR_CON,  15,   1,   1,   0.250,      8.112    ,   0.900,   0.900,   0.700,   0.700,MediumRough
+ Material CTF Summary,STD OPAQUE DOOR PANEL_CON,  0.0000,         0.000,      0.000,        0.000,  0.1233    
+ CTF,   1,       0.0000000    ,       0.0000000    ,       0.0000000    ,       0.0000000    
+ CTF,   0,       8.1122739    ,       8.1122739    ,       8.1122739    
+ Construction CTF,STD SWINGING DOOR_SEMI,  16,   1,   1,   0.250,      8.112    ,   0.900,   0.900,   0.700,   0.700,MediumRough
+ Material CTF Summary,STD OPAQUE DOOR PANEL_SEMI,  0.0000,         0.000,      0.000,        0.000,  0.1233    
+ CTF,   1,       0.0000000    ,       0.0000000    ,       0.0000000    ,       0.0000000    
+ CTF,   0,       8.1122739    ,       8.1122739    ,       8.1122739    
+ Construction CTF,STD OVERHEAD DOOR,  17,   1,   1,   0.250,      3.916    ,   0.900,   0.900,   0.700,   0.700,MediumRough
+ Material CTF Summary,STD OVERHEAD DOOR PANEL,  0.0000,         0.000,      0.000,        0.000,  0.2553    
+ CTF,   1,       0.0000000    ,       0.0000000    ,       0.0000000    ,       0.0000000    
+ CTF,   0,       3.9162701    ,       3.9162701    ,       3.9162701    
+ Construction CTF,IEAD_R-15 CI_ROOF,  23,   3,   8,   0.250,     0.4921    ,   0.900,   0.900,   0.700,   0.700,VeryRough
+ Material CTF Summary,ROOF MEMBRANE,  0.0095,         0.160,   1121.290,     1460.000,  0.5937E-01
+ Material CTF Summary,ROOF INSULATION,  0.0967,         0.049,    265.000,      836.800,   1.973    
+ Material CTF Summary,METAL DECKING,  0.0015,        45.006,   7680.000,      418.400,  0.3333E-04
+ CTF,   8,      0.49988726E-11,     -0.65849199E-11,      0.50259993E-10,      0.21242693E-16
+ CTF,   7,     -0.15440094E-03,     -0.88314292E-11,     -0.38647545E-03,      0.64030729E-11
+ CTF,   6,      0.13268170E-01,      0.17803710E-06,      0.18447296E-01,     -0.52657300E-04
+ CTF,   5,     -0.34623645    ,      0.51065853E-04,     -0.32877544    ,      0.24229111E-02
+ CTF,   4,       3.7569303    ,      0.15361063E-02,       2.7791923    ,     -0.40781971E-01
+ CTF,   3,      -18.559400    ,      0.91451188E-02,      -11.822382    ,      0.31393974    
+ CTF,   2,       42.906948    ,      0.12092271E-01,       25.244847    ,      -1.1360362    
+ CTF,   1,      -44.947375    ,      0.29096496E-02,      -25.478867    ,       1.8081144    
+ CTF,   0,       17.201801    ,      0.46551848E-04,       9.6137055    
+ Construction CTF,STANDARD_INT-WALL,  24,   2,   4,   0.250,      6.299    ,   0.900,   0.900,   0.700,   0.700,Smooth
+ Material CTF Summary,GP01 1/2 GYPSUM,  0.0127,         0.160,    800.000,     1090.000,  0.7938E-01
+ Material CTF Summary,GP01 1/2 GYPSUM,  0.0127,         0.160,    800.000,     1090.000,  0.7938E-01
+ CTF,   4,      0.12042566E-13,      0.45929688E-14,      0.12042579E-13,       0.0000000    
+ CTF,   3,     -0.90043060E-05,      0.30474453E-05,     -0.90043060E-05,      0.18391453E-13
+ CTF,   2,      0.23735444    ,      0.83694685E-01,      0.23735444    ,     -0.65848504E-05
+ CTF,   1,      -8.4013897    ,       3.1829864    ,      -8.4013897    ,      0.83534042E-01
+ CTF,   0,       13.937100    ,       2.5063712    ,       13.937100    
+ Construction CTF,STEEL-FRAMED_R-13 + R-3.8 CI_EXT-WALL,  25,   3,   7,   0.250,     0.6009    ,   0.900,   0.900,   0.700,   0.920,Rough
+ Material CTF Summary,MAT-SHEATH,  0.0000,         0.000,      0.000,        0.000,  0.3626    
+ Material CTF Summary,WALL INSULATION [6],  0.0550,         0.045,    265.000,      836.800,   1.222    
+ Material CTF Summary,1/2IN GYPSUM,  0.0127,         0.160,    784.900,      830.000,  0.7938E-01
+ CTF,   7,     -0.64603163E-11,      0.11113318E-12,     -0.30259369E-09,      0.13551981E-13
+ CTF,   6,      0.24664012E-07,      0.29665849E-08,      0.80365776E-06,     -0.19459467E-09
+ CTF,   5,     -0.15916519E-04,      0.46378824E-05,     -0.44501841E-03,      0.47740447E-06
+ CTF,   4,      0.21088085E-02,      0.77425475E-03,      0.59041330E-01,     -0.20019400E-03
+ CTF,   3,     -0.75718346E-01,      0.17877947E-01,      -1.6801467    ,      0.14803066E-01
+ CTF,   2,      0.79614664    ,      0.65204555E-01,       10.387041    ,     -0.25311770    
+ CTF,   1,      -2.3123351    ,      0.34273572E-01,      -19.098550    ,       1.0401065    
+ CTF,   0,       1.7090352    ,      0.10864275E-02,       10.452280    
+ Construction CTF,UNHEATED - 8IN SLAB WITH CARPET_EXT-SLAB,  26,   2,   7,   0.250,      2.692    ,   0.900,   0.900,   0.700,   0.700,Rough
+ Material CTF Summary,MAT-CC05 8 HW CONCRETE,  0.2032,         1.311,   2240.000,      836.800,  0.1550    
+ Material CTF Summary,CP02 CARPET PAD,  0.0000,         0.000,      0.000,        0.000,  0.2165    
+ CTF,   7,      0.73007622E-15,      0.22923445E-16,     -0.40351002E-08,     -0.83311573E-17
+ CTF,   6,      0.83927725E-01,      0.83015600E-07,      0.89488232E-02,     -0.17451062E-02
+ CTF,   5,      -1.8685390    ,      0.41136936E-04,     -0.19978971    ,      0.40177775E-01
+ CTF,   4,       15.283599    ,      0.91172172E-03,       1.6629766    ,     -0.34407097    
+ CTF,   3,      -58.197697    ,      0.43244653E-02,      -6.5540426    ,       1.3917703    
+ CTF,   2,       109.30648    ,      0.43603271E-02,       12.932295    ,      -2.8126096    
+ CTF,   1,      -97.605324    ,      0.10525637E-02,      -12.241896    ,       2.7225169    
+ CTF,   0,       33.008213    ,      0.43354884E-04,       4.4021693    
+ Construction CTF,MASS_R-8.3 CI_EXPOSEDFLOOR,  27,   3,  10,   0.750,     0.5603    ,   0.900,   0.900,   0.700,   0.700,MediumRough
+ Material CTF Summary,FLOOR INSULATION [2],  0.0636,         0.045,    265.000,      836.800,   1.413    
+ Material CTF Summary,MAT-CC05 8 HW CONCRETE,  0.2032,         1.311,   2240.000,      836.800,  0.1550    
+ Material CTF Summary,CP02 CARPET PAD,  0.0000,         0.000,      0.000,        0.000,  0.2165    
+ CTF,  10,      0.19022653E-13,      0.98428503E-15,      0.11728164E-14,     -0.18774063E-15
+ CTF,   9,     -0.34960488E-10,      0.15361402E-13,     -0.48650551E-11,      0.32843166E-12
+ CTF,   8,      0.23772217E-07,      0.43390742E-10,      0.50066433E-08,     -0.42598379E-09
+ CTF,   7,     -0.67409248E-05,      0.23617007E-07,     -0.17336691E-05,      0.19474131E-06
+ CTF,   6,      0.74270202E-03,      0.29203488E-05,      0.23321776E-03,     -0.33209742E-04
+ CTF,   5,     -0.26883868E-01,      0.92190718E-04,     -0.12909486E-01,      0.21779833E-02
+ CTF,   4,      0.36560286    ,      0.78065023E-03,      0.27539382    ,     -0.52761494E-01
+ CTF,   3,      -2.0449742    ,      0.18045335E-02,      -2.1292469    ,      0.44030549    
+ CTF,   2,       4.9055051    ,      0.94950039E-03,       6.8676480    ,      -1.5007693    
+ CTF,   1,      -5.1739218    ,      0.15381532E-03,      -9.1789097    ,       2.1043784    
+ CTF,   0,       1.9776909    ,     -0.28485939E-04,       4.1815460    
+ Construction CTF,SWINGING_NR_DOOR,  28,   3,   2,   0.250,      3.975    ,   0.800,   0.800,   0.500,   0.500,Smooth
+ Material CTF Summary,METAL DOOR MEDIUM 18GA_1,  0.0013,        45.315,   7833.030,      502.080,  0.2869E-04
+ Material CTF Summary,AIR,  0.0000,         0.000,      0.000,        0.000,  0.2515    
+ Material CTF Summary,METAL DOOR MEDIUM 18GA_2,  0.0013,        45.315,   7833.030,      502.080,  0.2869E-04
+ CTF,   2,      0.15438729E-11,     -0.13142420E-15,      0.15438729E-11,       0.0000000    
+ CTF,   1,      -5.6800564    ,      0.66578691E-03,      -5.6800564    ,      0.47321664E-12
+ CTF,   0,       9.6552927    ,       3.9745705    ,       9.6552927    
+ Construction CTF,NON-SWINGING_NR_DOOR,  29,   3,   2,   0.250,      8.233    ,   0.800,   0.800,   0.500,   0.500,Smooth
+ Material CTF Summary,METAL DOOR MEDIUM 18GA_1,  0.0013,        45.315,   7833.030,      502.080,  0.2869E-04
+ Material CTF Summary,AIR [1],  0.0000,         0.000,      0.000,        0.000,  0.1214    
+ Material CTF Summary,METAL DOOR MEDIUM 18GA_2,  0.0013,        45.315,   7833.030,      502.080,  0.2869E-04
+ CTF,   2,      0.15392715E-11,     -0.27139096E-15,      0.15392715E-11,       0.0000000    
+ CTF,   1,      -5.6793434    ,      0.13788381E-02,      -5.6793434    ,      0.47185874E-12
+ CTF,   0,       13.912684    ,       8.2319622    ,       13.912684    
+! <WindowConstruction>,Construction Name,Index,#Layers,Roughness,Conductance {W/m2-K},SHGC,Solar Transmittance at Normal Incidence,Visible Transmittance at Normal Incidence
+! <WindowMaterial:Glazing>, Material Name, Optical Data Type, Spectral Data Set Name, Thickness {m}, Solar Transmittance,Front Solar Reflectance, Back Solar Reflectance, Visible Transmittance, Front Visible Reflectance,Back Visible Reflectance,Infrared Transmittance, Front Thermal Emissivity, Back Thermal Emissivity,Conductivity {W/m-K},Dirt Factor,Solar Diffusing
+ WindowConstruction,TDD_DOME,10,1,VerySmooth,6.082,0.929,0.920,0.920
+ WindowMaterial:Glazing,STD CLEAR ACRYLIC PLASTIC,SpectralAverage,,3.00000E-003,0.92000,5.00000E-002,5.00000E-002,0.92000,5.00000E-002,5.00000E-002,0.00000,0.90000,0.90000,0.90000,1.00000,No
+ WindowConstruction,TDD_DIFFUSER,11,1,VerySmooth,6.115,0.906,0.900,0.900
+ WindowMaterial:Glazing,STD DIFFUSING ACRYLIC PLASTIC,SpectralAverage,,2.20000E-003,0.90000,8.00000E-002,8.00000E-002,0.90000,8.00000E-002,8.00000E-002,0.00000,0.90000,0.90000,0.90000,1.00000,No
+ WindowConstruction,STD_WINDOW_UVALUE_3.237_SHGC_0.49_VT_0.622,18,1,VerySmooth,2.795,0.497,0.419,0.623
+ WindowMaterial:Glazing,THEORETICAL GLASS [132],SpectralAverage,,2.10238E-002,0.41846,0.37270,0.37270,0.62200,0.13109,0.15077,0.00000,0.84000,0.84000,0.11223,1.00000,No
+ WindowConstruction,STD_WINDOW_UVALUE_3.237_SHGC_0.49_VT_0.622_EAST,19,1,VerySmooth,2.795,0.497,0.419,0.623
+ WindowMaterial:Glazing,THEORETICAL GLASS [132],SpectralAverage,,2.10238E-002,0.41846,0.37270,0.37270,0.62200,0.13109,0.15077,0.00000,0.84000,0.84000,0.11223,1.00000,No
+ WindowConstruction,STD_WINDOW_UVALUE_3.237_SHGC_0.49_VT_0.622_NORTH,20,1,VerySmooth,2.795,0.497,0.419,0.623
+ WindowMaterial:Glazing,THEORETICAL GLASS [132],SpectralAverage,,2.10238E-002,0.41846,0.37270,0.37270,0.62200,0.13109,0.15077,0.00000,0.84000,0.84000,0.11223,1.00000,No
+ WindowConstruction,STD_WINDOW_UVALUE_3.237_SHGC_0.49_VT_0.622_WEST,21,1,VerySmooth,2.795,0.497,0.419,0.623
+ WindowMaterial:Glazing,THEORETICAL GLASS [132],SpectralAverage,,2.10238E-002,0.41846,0.37270,0.37270,0.62200,0.13109,0.15077,0.00000,0.84000,0.84000,0.11223,1.00000,No
+ WindowConstruction,STD_WINDOW_UVALUE_3.919_SHGC_0.49_VT_0.622,22,1,VerySmooth,2.795,0.497,0.419,0.623
+ WindowMaterial:Glazing,THEORETICAL GLASS [146],SpectralAverage,,2.10238E-002,0.41846,0.37270,0.37270,0.62200,0.13109,0.15077,0.00000,0.84000,0.84000,0.11223,1.00000,No
+! <Shadowing/Sun Position Calculations> [Annual Simulations], Calculation Method,Value {days}, Allowable Number Figures in Shadow Overlap {}, Polygon Clipping Algorithm, Sky Diffuse Modeling Algorithm
+Shadowing/Sun Position Calculations,AverageOverDaysInFrequency,30,15000,SutherlandHodgman,SimpleSkyDiffuseModeling
+! <Infiltration Airflow Stats - Nominal>,Name,Schedule Name,Zone Name, Zone Floor Area {m2}, # Zone Occupants,Design Volume Flow Rate {m3/s},Volume Flow Rate/Floor Area {m3/s/m2},Volume Flow Rate/Exterior Surface Area {m3/s/m2},ACH - Air Changes per Hour,Equation A - Constant Term Coefficient {},Equation B - Temperature Term Coefficient {1/C},Equation C - Velocity Term Coefficient {s/m}, Equation D - Velocity Squared Term Coefficient {s2/m2}
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_1_SEC_1_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_1,307.66,13.1,0.219,7.125E-004,8.024E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_2_SEC_1_INFILTRATION,INFIL_SCH,ZN_1_FLR_2_SEC_1,307.66,13.1,0.219,7.125E-004,8.024E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_3_SEC_1_INFILTRATION,INFIL_SCH,ZN_1_FLR_3_SEC_1,307.66,13.1,0.219,7.125E-004,3.774E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_1_SEC_2_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_2,143.39,6.1,0.102,7.125E-004,7.479E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_2_SEC_2_INFILTRATION,INFIL_SCH,ZN_1_FLR_2_SEC_2,143.39,6.1,0.102,7.125E-004,7.479E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_3_SEC_2_INFILTRATION,INFIL_SCH,ZN_1_FLR_3_SEC_2,143.39,6.1,0.102,7.125E-004,3.649E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_1_SEC_3_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_3,307.66,13.1,0.219,7.125E-004,8.024E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_2_SEC_3_INFILTRATION,INFIL_SCH,ZN_1_FLR_2_SEC_3,307.66,13.1,0.219,7.125E-004,8.024E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_3_SEC_3_INFILTRATION,INFIL_SCH,ZN_1_FLR_3_SEC_3,307.66,13.1,0.219,7.125E-004,3.774E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_1_SEC_4_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_4,143.39,6.1,0.102,7.125E-004,7.479E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_2_SEC_4_INFILTRATION,INFIL_SCH,ZN_1_FLR_2_SEC_4,143.39,6.1,0.102,7.125E-004,7.479E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_3_SEC_4_INFILTRATION,INFIL_SCH,ZN_1_FLR_3_SEC_4,143.39,6.1,0.102,7.125E-004,3.649E-004,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_1_SEC_5_INFILTRATION,INFIL_SCH,ZN_1_FLR_1_SEC_5,1682.14,71.9,1.199,7.125E-004,N/A,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_2_SEC_5_INFILTRATION,INFIL_SCH,ZN_1_FLR_2_SEC_5,1682.14,71.9,1.199,7.125E-004,N/A,0.675,1.000,0.000,0.000,0.000
+ ZoneInfiltration Airflow Stats, ZN_1_FLR_3_SEC_5_INFILTRATION,INFIL_SCH,ZN_1_FLR_3_SEC_5,1682.14,71.9,1.199,7.125E-004,7.125E-004,0.675,1.000,0.000,0.000,0.000
+! <AirFlow Model>, Simple
+ AirFlow Model, Simple
+! <RoomAir Model>, Zone Name, Mixing/Mundt/UCSDDV/UCSDCV/UCSDUFI/UCSDUFE/User Defined
+RoomAir Model,ZN_1_FLR_1_SEC_1,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_2_SEC_1,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_3_SEC_1,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_1_SEC_2,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_2_SEC_2,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_3_SEC_2,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_1_SEC_3,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_2_SEC_3,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_3_SEC_3,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_1_SEC_4,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_2_SEC_4,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_3_SEC_4,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_1_SEC_5,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_2_SEC_5,Mixing/Well-Stirred
+RoomAir Model,ZN_1_FLR_3_SEC_5,Mixing/Well-Stirred
+! <AirflowNetwork Model:Control>, No Multizone or Distribution/Multizone with Distribution/Multizone without Distribution/Multizone with Distribution only during Fan Operation
+AirflowNetwork Model:Control,NoMultizoneOrDistribution
+! <Zone Volume Capacitance Multiplier>, Sensible Heat Capacity Multiplier, Moisture Capacity Multiplier, Carbon Dioxide Capacity Multiplier, Generic Contaminant Capacity Multiplier
+Zone Volume Capacitance Multiplier,   1.000 ,   1.000,   1.000,   1.000
+! <Load Timesteps in Zone Design Calculation Averaging Window>, Value
+ Load Timesteps in Zone Design Calculation Averaging Window,    4
+! <Heating Sizing Factor Information>, Sizing Factor ID, Value
+ Heating Sizing Factor Information, Global,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_1,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_2_SEC_1,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_3_SEC_1,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_2,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_2_SEC_2,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_3_SEC_2,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_3,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_2_SEC_3,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_3_SEC_3,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_4,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_2_SEC_4,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_3_SEC_4,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_1_SEC_5,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_2_SEC_5,   1.2000    
+ Heating Sizing Factor Information, Zone ZN_1_FLR_3_SEC_5,   1.2000    
+! <Cooling Sizing Factor Information>, Sizing Factor ID, Value
+ Cooling Sizing Factor Information, Global,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_1,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_2_SEC_1,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_3_SEC_1,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_2,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_2_SEC_2,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_3_SEC_2,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_3,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_2_SEC_3,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_3_SEC_3,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_4,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_2_SEC_4,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_3_SEC_4,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_1_SEC_5,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_2_SEC_5,   1.2000    
+ Cooling Sizing Factor Information, Zone ZN_1_FLR_3_SEC_5,   1.2000    
+! <Zone Sizing Information>, Zone Name, Load Type, Calc Des Load {W}, User Des Load {W}, Calc Des Air Flow Rate {m3/s}, User Des Air Flow Rate {m3/s}, Design Day Name, Date/Time of Peak, Temperature at Peak {C}, Humidity Ratio at Peak {kgWater/kgDryAir}, Floor Area {m2}, # Occupants, Calc Outdoor Air Flow Rate {m3/s}
+ Zone Sizing Information, ZN_1_FLR_1_SEC_1, Cooling, 9569.29520, 11483.15423, 0.56965, 0.68359, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 15:00:00, 32.30000, 1.45722E-002, 307.66291, 13.14799, 0.12237
+ Zone Sizing Information, ZN_1_FLR_1_SEC_1, Heating, 16645.07597, 19974.09116, 0.72999, 0.87599, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 307.66291, 13.14799, 0.12237
+ Zone Sizing Information, ZN_1_FLR_2_SEC_1, Cooling, 27525.98955, 33031.18746, 1.63855, 1.96626, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 15:15:00, 32.13650, 1.45722E-002, 307.66291, 13.14799, 0.24475
+ Zone Sizing Information, ZN_1_FLR_2_SEC_1, Heating, 33306.89514, 39968.27416, 1.46072, 1.75286, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 307.66291, 13.14799, 0.24475
+ Zone Sizing Information, ZN_1_FLR_3_SEC_1, Cooling, 15934.22851, 19121.07421, 0.94852, 1.13822, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 15:45:00, 31.80950, 1.45722E-002, 307.66291, 13.14799, 0.12237
+ Zone Sizing Information, ZN_1_FLR_3_SEC_1, Heating, 22310.49713, 26772.59656, 0.97851, 1.17421, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 307.66291, 13.14799, 0.12237
+ Zone Sizing Information, ZN_1_FLR_1_SEC_2, Cooling, 4784.68101, 5741.61722, 0.28483, 0.34179, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 10:45:00, 29.38425, 1.45722E-002, 143.38878, 6.12773, 5.70330E-002
+ Zone Sizing Information, ZN_1_FLR_1_SEC_2, Heating, 7934.52230, 9521.42676, 0.34799, 0.41758, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 143.38878, 6.12773, 5.70330E-002
+ Zone Sizing Information, ZN_1_FLR_2_SEC_2, Cooling, 13520.17778, 16224.21333, 0.80482, 0.96578, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 10:45:00, 29.38425, 1.45722E-002, 143.38878, 6.12773, 0.11407
+ Zone Sizing Information, ZN_1_FLR_2_SEC_2, Heating, 15933.48858, 19120.18629, 0.69880, 0.83856, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 143.38878, 6.12773, 0.11407
+ Zone Sizing Information, ZN_1_FLR_3_SEC_2, Cooling, 7235.49081, 8682.58897, 0.43071, 0.51685, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 16:15:00, 31.42800, 1.45722E-002, 143.38878, 6.12773, 5.70330E-002
+ Zone Sizing Information, ZN_1_FLR_3_SEC_2, Heating, 10604.98493, 12725.98192, 0.46513, 0.55816, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 143.38878, 6.12773, 5.70330E-002
+ Zone Sizing Information, ZN_1_FLR_1_SEC_3, Cooling, 8396.60707, 10075.92849, 0.49985, 0.59982, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 19:00:00, 28.04900, 1.45722E-002, 307.66291, 13.14799, 0.12237
+ Zone Sizing Information, ZN_1_FLR_1_SEC_3, Heating, 16585.51973, 19902.62368, 0.72738, 0.87286, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 307.66291, 13.14799, 0.12237
+ Zone Sizing Information, ZN_1_FLR_2_SEC_3, Cooling, 25722.24092, 30866.68910, 1.53118, 1.83742, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 19:00:00, 28.04900, 1.45722E-002, 307.66291, 13.14799, 0.24475
+ Zone Sizing Information, ZN_1_FLR_2_SEC_3, Heating, 33288.16006, 39945.79207, 1.45990, 1.75188, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 307.66291, 13.14799, 0.24475
+ Zone Sizing Information, ZN_1_FLR_3_SEC_3, Cooling, 15124.62136, 18149.54563, 0.90032, 1.08039, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 16:45:00, 30.99200, 1.45722E-002, 307.66291, 13.14799, 0.12237
+ Zone Sizing Information, ZN_1_FLR_3_SEC_3, Heating, 22382.21209, 26858.65451, 0.98166, 1.17799, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 307.66291, 13.14799, 0.12237
+ Zone Sizing Information, ZN_1_FLR_1_SEC_4, Cooling, 5151.52545, 6181.83054, 0.30666, 0.36800, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 18:15:00, 29.27525, 1.45722E-002, 143.38878, 6.12773, 5.70330E-002
+ Zone Sizing Information, ZN_1_FLR_1_SEC_4, Heating, 7934.49182, 9521.39019, 0.34798, 0.41758, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 143.38878, 6.12773, 5.70330E-002
+ Zone Sizing Information, ZN_1_FLR_2_SEC_4, Cooling, 14106.27030, 16927.52436, 0.83970, 1.00764, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 18:15:00, 29.27525, 1.45722E-002, 143.38878, 6.12773, 0.11407
+ Zone Sizing Information, ZN_1_FLR_2_SEC_4, Heating, 15934.16131, 19120.99357, 0.69883, 0.83859, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 143.38878, 6.12773, 0.11407
+ Zone Sizing Information, ZN_1_FLR_3_SEC_4, Cooling, 8055.21689, 9666.26027, 0.47950, 0.57540, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 17:45:00, 29.95650, 1.45722E-002, 143.38878, 6.12773, 5.70330E-002
+ Zone Sizing Information, ZN_1_FLR_3_SEC_4, Heating, 10605.23817, 12726.28580, 0.46514, 0.55817, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 143.38878, 6.12773, 5.70330E-002
+ Zone Sizing Information, ZN_1_FLR_1_SEC_5, Cooling, 39889.55316, 47867.46379, 2.37471, 2.84965, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 18:45:00, 28.45775, 1.45722E-002, 1682.14443, 71.88651, 0.66907
+ Zone Sizing Information, ZN_1_FLR_1_SEC_5, Heating, 67263.00783, 80715.60939, 2.94925, 3.53910, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 1682.14443, 71.88651, 0.66907
+ Zone Sizing Information, ZN_1_FLR_2_SEC_5, Cooling, 130608.20742, 156729.84891, 7.77503, 9.33003, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 19:15:00, 27.74925, 1.45722E-002, 1682.14443, 71.88651, 1.33815
+ Zone Sizing Information, ZN_1_FLR_2_SEC_5, Heating, 130141.74199, 156170.09039, 5.70587, 6.84704, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 1682.14443, 71.88651, 1.33815
+ Zone Sizing Information, ZN_1_FLR_3_SEC_5, Cooling, 76664.70414, 91997.64497, 4.56377, 5.47653, DETROIT ANN CLG .4% CONDNS DB=>MWB, 7/21 16:45:00, 30.99200, 1.45722E-002, 1682.14443, 71.88651, 0.66907
+ Zone Sizing Information, ZN_1_FLR_3_SEC_5, Heating, 94983.53884, 113980.24661, 4.16524, 4.99829, DETROIT ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -17.70000, 8.07996E-004, 1682.14443, 71.88651, 0.66907
+! <System Sizing Information>, System Name, Field Description, Value
+ System Sizing Information, PVAV_REHEAT_1, Calculated Cooling Design Air Flow Rate [m3/s], 28.73736
+ System Sizing Information, PVAV_REHEAT_1, User Cooling Design Air Flow Rate [m3/s], 28.73736
+ System Sizing Information, PVAV_REHEAT_1, Calculated Heating Design Air Flow Rate [m3/s], 26.61887
+ System Sizing Information, PVAV_REHEAT_1, User Heating Design Air Flow Rate [m3/s], 26.61887
+! <Component Sizing Information>, Component Type, Component Name, Input Field Description, Value
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 0.87599
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_1 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.71367
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_1 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 5.35513E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.87599
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_1 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 24873.89986
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_1 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 5.35513E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_1 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 539.81933
+! <Water Heating Coil Capacity Information>,Component Type,Name,Nominal Total Capacity {W}
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_1_SEC_1 VAV BOX REHEAT COIL,24895.94
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.96626
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_1 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.63590
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_1 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 1.07156E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 1.75286
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_1 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 49772.79160
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_1 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 1.07156E-003
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_1 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 1080.18108
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_2_SEC_1 VAV BOX REHEAT COIL,49816.89
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.17421
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_1 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.53242
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_1 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 7.17912E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 1.17421
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_1 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 33346.10216
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_1 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 7.17912E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_1 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 723.70856
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_3_SEC_1 VAV BOX REHEAT COIL,33375.64
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 0.41758
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_2 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.69774
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_2 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 2.55280E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.41758
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_2 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 11857.44113
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_2 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 2.55280E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_2 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 257.33371
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_1_SEC_2 VAV BOX REHEAT COIL,11867.95
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 0.96578
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_2 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.60338
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_2 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 5.12634E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.83856
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_2 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 23811.23656
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_2 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 5.12634E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_2 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 516.75877
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_2_SEC_2 VAV BOX REHEAT COIL,23832.33
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 0.55816
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_2 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.52202
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_2 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.41257E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.55816
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_2 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 15850.96792
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_2 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.41257E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_2 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 344.01334
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_3_SEC_2 VAV BOX REHEAT COIL,15865.01
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 0.87286
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_3 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.71623
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_3 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 5.33595E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.87286
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_3 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 24784.84139
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_3 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 5.33595E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_3 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 537.88633
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_1_SEC_3 VAV BOX REHEAT COIL,24806.80
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.83742
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_3 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.68049
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_3 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 1.07096E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 1.75188
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_3 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 49744.78443
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_3 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 1.07096E-003
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_3 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 1079.57318
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_2_SEC_3 VAV BOX REHEAT COIL,49788.85
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.17799
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_3 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.53071
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_3 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 7.20220E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 1.17799
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_3 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 33453.31532
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_3 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 7.20220E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_3 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 726.03564
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_3_SEC_3 VAV BOX REHEAT COIL,33482.95
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 0.41758
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_4 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.69775
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 2.55279E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.41758
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 11857.39556
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 2.55279E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 257.33272
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_1_SEC_4 VAV BOX REHEAT COIL,11867.90
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.00764
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_4 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.57831
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 5.12656E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.83859
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 23812.24253
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 5.12656E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 516.78061
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_2_SEC_4 VAV BOX REHEAT COIL,23833.34
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 0.57540
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_4 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.50637
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.41265E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.55817
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 15851.34661
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.41265E-004
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 344.02156
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_3_SEC_4 VAV BOX REHEAT COIL,15865.39
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_5 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 3.53910
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_5 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_5 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.96582
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_5 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 2.16321E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_1_SEC_5 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 3.53910
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_5 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 100478.26651
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_5 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 2.16321E-003
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_1_SEC_5 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 2180.51933
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_1_SEC_5 VAV BOX REHEAT COIL,100567.29
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_5 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 9.33003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_5 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_5 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.73271
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_5 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 4.18505E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_2_SEC_5 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 6.84704
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_5 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 194390.30132
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_5 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 4.18505E-003
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_2_SEC_5 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 4218.52324
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_2_SEC_5 VAV BOX REHEAT COIL,194562.53
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_5 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 5.47653
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_5 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_5 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.62414
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_5 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.05562E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, ZN_1_FLR_3_SEC_5 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 4.99829
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_5 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 141929.59398
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_5 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.05562E-003
+ Component Sizing Information, Coil:Heating:Water, ZN_1_FLR_3_SEC_5 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 3080.20564
+Water Heating Coil Capacity Information,Coil:Heating:Water,ZN_1_FLR_3_SEC_5 VAV BOX REHEAT COIL,142055.33
+ Component Sizing Information, Branch, PVAV_REHEAT_1 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 28.73736
+ Component Sizing Information, AirLoopHVAC, PVAV_REHEAT_1, Design Supply Air Flow Rate [m3/s], 28.73736
+ Component Sizing Information, Controller:OutdoorAir, PVAV_REHEAT_1_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 28.73736
+ Component Sizing Information, Controller:OutdoorAir, PVAV_REHEAT_1_OA_CONTROLLER, Minimum Outdoor Air Flow Rate [m3/s], 4.11154
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, PVAV_REHEAT_1_COOLC 1 DXCOIL, Design Size Rated High Speed Air Flow Rate [m3/s], 28.73736
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, PVAV_REHEAT_1_COOLC 1 DXCOIL, Design Size Rated High Speed Total Cooling Capacity (gross) [W], 602375.37713
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, PVAV_REHEAT_1_COOLC 1 DXCOIL, Design Size Rated High Speed Sensible Heat Ratio, 0.72134
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, PVAV_REHEAT_1_COOLC 1 DXCOIL, Design Size Rated Low Speed Air Flow Rate [m3/s], 9.57816
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, PVAV_REHEAT_1_COOLC 1 DXCOIL, Design Size Rated Low Speed Total Cooling Capacity (gross) [W], 200771.71320
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, PVAV_REHEAT_1_COOLC 1 DXCOIL, Design Size Rated Low Speed Sensible Heat Ratio, 0.72134
+ Component Sizing Information, Coil:Cooling:DX:TwoSpeed, PVAV_REHEAT_1_COOLC 1 DXCOIL, User-Specified Rated Low Speed Sensible Heat Ratio, 0.69000
+! <VAV DX Cooling Coil Standard Rating Information>, DX Coil Type, DX Coil Name, Fan Type, Fan Name, Standard Net Cooling Capacity {W}, Standard Net Cooling Capacity {Btu/h}, IEER {Btu/W-h}, COP 100% Capacity {W/W}, COP 75% Capacity {W/W}, COP 50% Capacity {W/W}, COP 25% Capacity {W/W}, EER 100% Capacity {Btu/W-h}, EER 75% Capacity {Btu/W-h}, EER 50% Capacity {Btu/W-h}, EER 25% Capacity {Btu/W-h}, Supply Air Flow 100% {kg/s}, Supply Air Flow 75% {kg/s},Supply Air Flow 50% {kg/s},Supply Air Flow 25% {kg/s}
+ VAV DX Cooling Coil Standard Rating Information, Coil:Cooling:DX:TwoSpeed,PVAV_REHEAT_1_COOLC 1 DXCOIL,N/A,N/A,581172.90,1983044.24,8.97,2.35,2.56,2.74,2.83,8.01,8.72,9.35,9.65,32.4539,24.9594,16.1683,7.1957,
+ Component Sizing Information, Coil:Heating:Water, PVAV_REHEAT_1_HEATC 1, Design Size Design Coil Load [W], 144306.81518
+ Component Sizing Information, Coil:Heating:Water, PVAV_REHEAT_1_HEATC 1, Design Size Maximum Water Flow Rate [m3/s], 3.10680E-003
+ Component Sizing Information, Coil:Heating:Water, PVAV_REHEAT_1_HEATC 1, Design Size U-Factor Times Area Value [W/K], 2241.97077
+Water Heating Coil Capacity Information,Coil:Heating:Water,PVAV_REHEAT_1_HEATC 1,118868.79
+ Component Sizing Information, Fan:VariableVolume, PVAV_REHEAT_1_FAN, Design Size Maximum Flow Rate [m3/s], 28.73736
+ Component Sizing Information, Controller:WaterCoil, PVAV_REHEAT_1_HEATC 1_CONTROLLER, Maximum Actuated Flow [m3/s], 3.10680E-003
+ Component Sizing Information, Boiler:HotWater, HEATSYS1 BOILER, Nominal Capacity [W], 903631.49268
+ Component Sizing Information, Boiler:HotWater, HEATSYS1 BOILER, Design Water Flow Rate [m3/s], 1.93788E-002
+ Component Sizing Information, PlantLoop, HEATSYS1, Maximum Loop Flow Rate [m3/s], 1.93788E-002
+ Component Sizing Information, PlantLoop, HEATSYS1, Plant Loop Volume [m3], 21.80115
+ Component Sizing Information, Pump:VariableSpeed, HEATSYS1 PUMP, Rated Flow Rate [m3/s], 1.93788E-002
+ Component Sizing Information, Pump:VariableSpeed, HEATSYS1 PUMP, Rated Power Consumption [W], 4951.03538
+! <Environment>,Environment Name,Environment Type, Start Date, End Date, Start DayOfWeek, Duration {#days}, Source:Start DayOfWeek,  Use Daylight Saving, Use Holidays, Apply Weekend Holiday Rule,  Use Rain Values, Use Snow Values
+! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
+! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
+! <Environment:WarmupDays>, NumberofWarmupDays
+Environment,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,WeatherFileRunPeriod,01/01/2012,12/31/2013,Sunday,365,Use RunPeriod Specified Day,No ,No ,No ,Yes,Yes
+Environment:Daylight Saving,Yes,InputFile,03/12,11/05
+Environment:Special Days,NEW YEARS DAY,Holiday,InputFile,01/01,  1
+Environment:Special Days,VETERANS DAY,Holiday,InputFile,11/11,  1
+Environment:Special Days,CHRISTMAS,Holiday,InputFile,12/25,  1
+Environment:Special Days,INDEPENDENCE DAY,Holiday,InputFile,07/04,  1
+Environment:Special Days,MLK DAY,Holiday,InputFile,01/16,  1
+Environment:Special Days,PRESIDENTS DAY,Holiday,InputFile,02/20,  1
+Environment:Special Days,MEMORIAL DAY,Holiday,InputFile,05/29,  1
+Environment:Special Days,LABOR DAY,Holiday,InputFile,09/04,  1
+Environment:Special Days,COLUMBUS DAY,Holiday,InputFile,10/09,  1
+Environment:Special Days,THANKSGIVING,Holiday,InputFile,11/23,  1
+Environment:WarmupDays,  7
+! <Tabular Report>,Style,Unit Conversion
+Tabular Report,HTML,None
+! <Warmup Convergence Information>,Zone Name,Environment Type/Name,Average Warmup Temperature Difference {deltaC},Std Dev Warmup Temperature Difference {deltaC},Max Temperature Pass/Fail Convergence,Min Temperature Pass/Fail Convergence,Average Warmup Load Difference {W},Std Dev Warmup Load Difference {W},Heating Load Pass/Fail Convergence,Cooling Load Pass/Fail Convergence
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_1,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,0.7867434770,0.6878461921,Pass,Pass,0.6710483502,0.4838730577,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_2_SEC_1,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.1601559747,0.7720217891,Pass,Pass,0.6694761654,0.4791534548,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_3_SEC_1,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.5462423230,0.9771447927,Pass,Pass,0.6716182102,0.4853017300,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_2,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,0.8868151003,0.6871615698,Pass,Pass,0.6693080730,0.4785224495,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_2_SEC_2,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.2122939547,0.7918961091,Pass,Pass,0.6682496229,0.4757095508,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_3_SEC_2,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.6007796691,0.9958231720,Pass,Pass,0.6740722409,0.4921316164,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_3,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,0.9189858690,0.6971315555,Pass,Pass,0.6690293205,0.4777380470,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_2_SEC_3,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.2427278906,0.7888270126,Pass,Pass,0.6681719130,0.4754448329,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_3_SEC_3,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.6385494252,0.9993240536,Pass,Pass,0.6752427886,0.4955823650,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_4,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,0.9329244890,0.6982713663,Pass,Pass,0.6688303072,0.4771836239,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_2_SEC_4,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.2525390115,0.7985171454,Pass,Pass,0.6680274100,0.4750546225,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_3_SEC_4,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.6403825416,1.0084864469,Pass,Pass,0.6757655892,0.4970600103,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_1_SEC_5,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,0.4764441783,0.4503494716,Pass,Pass,0.6712368238,0.4835869724,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_2_SEC_5,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.1027862744,0.6827105778,Pass,Pass,0.6829542232,0.5157189358,Pass,Pass
+ Warmup Convergence Information,ZN_1_FLR_3_SEC_5,RunPeriod: Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,1.3756061087,0.8199473473,Pass,Pass,0.6691515981,0.4782368263,Pass,Pass
+! <Program Control Information:Threads/Parallel Sims>, Threading Supported,Maximum Number of Threads, Env Set Threads (OMP_NUM_THREADS), EP Env Set Threads (EP_OMP_NUM_THREADS), IDF Set Threads, Number of Threads Used (Interior Radiant Exchange), Number Nominal Surfaces, Number Parallel Sims
+Program Control:Threads/Parallel Sims, No,1, N/A, N/A, N/A, N/A, N/A, N/A
+End of Data
