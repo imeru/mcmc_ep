@@ -77,7 +77,7 @@ def likelihood(param):
     Boiler = param[10]
     COP = param[11]
     
-    """
+    
     #---------------------------------
     #to do: get the EUI from energyplus
     prediction = -0.2177929 - 0.2458677 * ROOF - 0.3842544 * WALL - 0.0049753 * WIN  \
@@ -101,9 +101,8 @@ def likelihood(param):
     path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
     
     # Run energyplus and get eui value
-    predict = run_eplus(path)
-
-     
+    prediction = run_eplus(path)
+    """     
     singlelikelihoods = norm.logpdf(x=y, loc=prediction, scale=sd)
     #sumll = sum(singlelikelihoods)
     return singlelikelihoods
@@ -158,7 +157,7 @@ def replace_markup(line, markup_value_pairs):
     return line
 
 
-def generate_markup_value_pairs(markup_values_pairs, count) :
+def generate_markup_value_pairs(markup_values_pairs, count):
     markup_value_pairs  = []
     for index in range(count):
         markup_value = {}
