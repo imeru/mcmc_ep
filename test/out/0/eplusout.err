@@ -1,4 +1,4 @@
-Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.20 16:19,IDD_Version 8.1.0.009
+Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.22 23:49,IDD_Version 8.1.0.009
    ************* Beginning Zone Sizing Calculations
    ** Warning ** Weather file location will be used rather than entered (IDF) Location object.
    **   ~~~   ** ..Location object=USA MI-ANN ARBOR
@@ -87,4 +87,4 @@ Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.20 16:19,IDD_Versio
    *************
    ************* EnergyPlus Warmup Error Summary. During Warmup: 0 Warning; 0 Severe Errors.
    ************* EnergyPlus Sizing Error Summary. During Sizing: 3 Warning; 0 Severe Errors.
-   ************* EnergyPlus Completed Successfully-- 5639 Warning; 0 Severe Errors; Elapsed Time=00hr 00min 46.66sec
+   ************* EnergyPlus Completed Successfully-- 5639 Warning; 0 Severe Errors; Elapsed Time=00hr 01min 45.95sec

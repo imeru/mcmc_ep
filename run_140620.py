@@ -108,5 +108,5 @@ def get_eui(totalarea):
     return eui
 
 
-predict = run_eplus(path)
-print predict
+prediction = run_eplus(path)
+print prediction

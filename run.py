@@ -7,7 +7,6 @@ import sys
 import os
 import shutil
 import csv
-from mplus import run_eplus, run_eplus_multi
 
 
 # initial values
@@ -81,6 +80,12 @@ def prepare_job_folders(output_folder, template_idf_path,
         write_idf(template_idf_path, output_path, markup_value_pair)
     return pathes
 
+def run_eplus(path):
+    current_dir = os.getcwd()
+    os.chdir(path)
+    call(["EnergyPlus"])
+    call(["ReadVarsESO", "my_results.rvi"])
+    os.chdir(current_dir)
 
 markup_value_pairs = generate_markup_value_pairs(markup_values_pairs, count)
 pathes = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)

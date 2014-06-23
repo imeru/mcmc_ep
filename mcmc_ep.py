@@ -77,7 +77,7 @@ def likelihood(param):
     Boiler = param[10]
     COP = param[11]
     
-    
+    """
     #---------------------------------
     #to do: get the EUI from energyplus
     prediction = -0.2177929 - 0.2458677 * ROOF - 0.3842544 * WALL - 0.0049753 * WIN  \
@@ -102,7 +102,7 @@ def likelihood(param):
     
     # Run energyplus and get eui value
     prediction = run_eplus(path)
-    """     
+         
     singlelikelihoods = norm.logpdf(x=y, loc=prediction, scale=sd)
     #sumll = sum(singlelikelihoods)
     return singlelikelihoods
