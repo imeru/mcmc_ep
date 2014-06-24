@@ -1,4 +1,4 @@
-Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.22 23:49
+Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.23 21:08
 1,5,Environment Title[],Latitude[deg],Longitude[deg],Time Zone[],Elevation[m]
 2,6,Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],Hour[],StartMinute[],EndMinute[],DayType
 3,3,Cumulative Day of Simulation[],Month[],Day of Month[],DST Indicator[1=yes 0=no],DayType  ! When Daily Report Variables Requested
@@ -9,7 +9,7 @@ Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.22 23:49
 End of Data Dictionary
 1,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,  41.98, -87.92,  -6.00, 201.00
 5,365
-41,8303972601873.51,77124291.4933153, 1, 1, 1,45,558760133.657831, 7,19,15,60
-1440,3468229633037.81,0.0, 1, 1, 1,45,1062549720.19214,11, 6, 7,15
+41,15917160553058.4,172047468.31056, 1, 1, 1,45,973995068.226168, 7,19,15,60
+1440,2327116222590.9,0.0, 1, 1, 1,45,912920373.767242, 5, 1, 1,15
 End of Data
  Number of Records Written=           2

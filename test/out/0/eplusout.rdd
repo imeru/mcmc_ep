@@ -1,4 +1,4 @@
-! Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.22 23:49,IDD_Version 8.1.0.009
+! Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2014.06.23 21:08,IDD_Version 8.1.0.009
 ! Output:Variable Objects (applicable to this run)
 Output:Variable,*,Site Outdoor Air Drybulb Temperature,hourly; !- Zone Average [C]
 Output:Variable,*,Site Outdoor Air Dewpoint Temperature,hourly; !- Zone Average [C]

@@ -887,7 +887,7 @@
     878     Through: 4/30,           !- Field 1
     879     For: WinterDesignDay,    !- Field 2
     880     Until: 24:00,            !- Field 3
-    881     21,                      !- Field 4
+    881     18.0620840057,                      !- Field 4
     882     For: WeekEnds Holidays SummerDesignDay,  !- Field 5
     883     Until: 24:00,            !- Field 6
     884     16,                      !- Field 7
@@ -895,13 +895,13 @@
     886     Until: 06:00,            !- Field 9
     887     16,                      !- Field 10
     888     Until: 21:00,            !- Field 11
-    889     21,                      !- Field 12
+    889     18.0620840057,                      !- Field 12
     890     Until: 24:00,            !- Field 13
     891     16,                      !- Field 14
     892     Through: 9/30,           !- Field 15
     893     For: WinterDesignDay,    !- Field 16
     894     Until: 24:00,            !- Field 17
-    895     24,                      !- Field 18
+    895     22.7024004046,                      !- Field 18
     896     For: WeekEnds Holidays SummerDesignDay,  !- Field 19
     897     Until: 24:00,            !- Field 20
     898     28,                      !- Field 21
@@ -909,13 +909,13 @@
     900     Until: 06:00,            !- Field 23
     901     28,                      !- Field 24
     902     Until: 18:00,            !- Field 25
-    903     24,                      !- Field 26
+    903     22.7024004046,                      !- Field 26
     904     Until: 24:00,            !- Field 27
     905     28,                      !- Field 28
     906     Through: 12/31,          !- Field 29
     907     For: WinterDesignDay,    !- Field 30
     908     Until: 24:00,            !- Field 31
-    909     21,                      !- Field 32
+    909     18.0620840057,                      !- Field 32
     910     For: WeekEnds Holidays SummerDesignDay,  !- Field 33
     911     Until: 24:00,            !- Field 34
     912     16,                      !- Field 35
@@ -923,7 +923,7 @@
     914     Until: 06:00,            !- Field 37
     915     16,                      !- Field 38
     916     Until: 21:00,            !- Field 39
-    917     21,                      !- Field 40
+    917     18.0620840057,                      !- Field 40
     918     Until: 24:00,            !- Field 41
     919     16;                      !- Field 42
     920 
@@ -1153,7 +1153,7 @@
    1144 Material,
    1145     Roof Insulation,         !- Name
    1146     MediumRough,             !- Roughness
-   1147     0.09667,                 !- Thickness {m}
+   1147     0.126139810236,                 !- Thickness {m}
    1148     0.0490,                  !- Conductivity {W/m-K}
    1149     265.0000,                !- Density {kg/m3}
    1150     836.8000,                !- Specific Heat {J/kg-K}
@@ -1186,7 +1186,7 @@
    1177 Material,
    1178     Wall Insulation [6],     !- Name
    1179     MediumRough,             !- Roughness
-   1180     0.055,                    !- Thickness {m}
+   1180     0.0292450402345,                    !- Thickness {m}
    1181     0.0450,                  !- Conductivity {W/m-K}
    1182     265.0000,                !- Density {kg/m3}
    1183     836.8000,                !- Specific Heat {J/kg-K}
@@ -1427,14 +1427,14 @@
    1418 
    1419 WindowMaterial:SimpleGlazingSystem,
    1420     Theoretical Glass [132], !- Name
-   1421     2.792,                   !- U-Factor {W/m2-K}
-   1422     0.5,                     !- Solar Heat Gain Coefficient
+   1421     2.01042925273,                   !- U-Factor {W/m2-K}
+   1422     0.545444523358,                     !- Solar Heat Gain Coefficient
    1423     0.622;                   !- Visible Transmittance
    1424 
    1425 WindowMaterial:SimpleGlazingSystem,
    1426     Theoretical Glass [146], !- Name
-   1427     2.792,                   !- U-Factor {W/m2-K}
-   1428     0.5,                     !- Solar Heat Gain Coefficient
+   1427     2.01042925273,                   !- U-Factor {W/m2-K}
+   1428     0.545444523358,                     !- Solar Heat Gain Coefficient
    1429     0.622;                   !- Visible Transmittance
    1430 
    1431 
@@ -4111,7 +4111,7 @@
    4102     Area/Person,             !- Number of People Calculation Method
    4103     ,                        !- Number of People
    4104     ,                        !- People per Zone Floor Area {person/m2}
-   4105     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4105     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4106     0.3000,                  !- Fraction Radiant
    4107     AUTOCALCULATE,           !- Sensible Heat Fraction
    4108     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4133,7 +4133,7 @@
    4124     Area/Person,             !- Number of People Calculation Method
    4125     ,                        !- Number of People
    4126     ,                        !- People per Zone Floor Area {person/m2}
-   4127     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4127     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4128     0.3000,                  !- Fraction Radiant
    4129     AUTOCALCULATE,           !- Sensible Heat Fraction
    4130     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4155,7 +4155,7 @@
    4146     Area/Person,             !- Number of People Calculation Method
    4147     ,                        !- Number of People
    4148     ,                        !- People per Zone Floor Area {person/m2}
-   4149     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4149     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4150     0.3000,                  !- Fraction Radiant
    4151     AUTOCALCULATE,           !- Sensible Heat Fraction
    4152     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4177,7 +4177,7 @@
    4168     Area/Person,             !- Number of People Calculation Method
    4169     ,                        !- Number of People
    4170     ,                        !- People per Zone Floor Area {person/m2}
-   4171     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4171     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4172     0.3000,                  !- Fraction Radiant
    4173     AUTOCALCULATE,           !- Sensible Heat Fraction
    4174     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4199,7 +4199,7 @@
    4190     Area/Person,             !- Number of People Calculation Method
    4191     ,                        !- Number of People
    4192     ,                        !- People per Zone Floor Area {person/m2}
-   4193     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4193     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4194     0.3000,                  !- Fraction Radiant
    4195     AUTOCALCULATE,           !- Sensible Heat Fraction
    4196     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4221,7 +4221,7 @@
    4212     Area/Person,             !- Number of People Calculation Method
    4213     ,                        !- Number of People
    4214     ,                        !- People per Zone Floor Area {person/m2}
-   4215     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4215     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4216     0.3000,                  !- Fraction Radiant
    4217     AUTOCALCULATE,           !- Sensible Heat Fraction
    4218     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4243,7 +4243,7 @@
    4234     Area/Person,             !- Number of People Calculation Method
    4235     ,                        !- Number of People
    4236     ,                        !- People per Zone Floor Area {person/m2}
-   4237     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4237     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4238     0.3000,                  !- Fraction Radiant
    4239     AUTOCALCULATE,           !- Sensible Heat Fraction
    4240     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4265,7 +4265,7 @@
    4256     Area/Person,             !- Number of People Calculation Method
    4257     ,                        !- Number of People
    4258     ,                        !- People per Zone Floor Area {person/m2}
-   4259     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4259     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4260     0.3000,                  !- Fraction Radiant
    4261     AUTOCALCULATE,           !- Sensible Heat Fraction
    4262     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4287,7 +4287,7 @@
    4278     Area/Person,             !- Number of People Calculation Method
    4279     ,                        !- Number of People
    4280     ,                        !- People per Zone Floor Area {person/m2}
-   4281     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4281     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4282     0.3000,                  !- Fraction Radiant
    4283     AUTOCALCULATE,           !- Sensible Heat Fraction
    4284     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4309,7 +4309,7 @@
    4300     Area/Person,             !- Number of People Calculation Method
    4301     ,                        !- Number of People
    4302     ,                        !- People per Zone Floor Area {person/m2}
-   4303     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4303     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4304     0.3000,                  !- Fraction Radiant
    4305     AUTOCALCULATE,           !- Sensible Heat Fraction
    4306     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4331,7 +4331,7 @@
    4322     Area/Person,             !- Number of People Calculation Method
    4323     ,                        !- Number of People
    4324     ,                        !- People per Zone Floor Area {person/m2}
-   4325     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4325     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4326     0.3000,                  !- Fraction Radiant
    4327     AUTOCALCULATE,           !- Sensible Heat Fraction
    4328     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4353,7 +4353,7 @@
    4344     Area/Person,             !- Number of People Calculation Method
    4345     ,                        !- Number of People
    4346     ,                        !- People per Zone Floor Area {person/m2}
-   4347     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4347     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4348     0.3000,                  !- Fraction Radiant
    4349     AUTOCALCULATE,           !- Sensible Heat Fraction
    4350     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4375,7 +4375,7 @@
    4366     Area/Person,             !- Number of People Calculation Method
    4367     ,                        !- Number of People
    4368     ,                        !- People per Zone Floor Area {person/m2}
-   4369     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4369     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4370     0.3000,                  !- Fraction Radiant
    4371     AUTOCALCULATE,           !- Sensible Heat Fraction
    4372     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4397,7 +4397,7 @@
    4388     Area/Person,             !- Number of People Calculation Method
    4389     ,                        !- Number of People
    4390     ,                        !- People per Zone Floor Area {person/m2}
-   4391     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4391     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4392     0.3000,                  !- Fraction Radiant
    4393     AUTOCALCULATE,           !- Sensible Heat Fraction
    4394     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4419,7 +4419,7 @@
    4410     Area/Person,             !- Number of People Calculation Method
    4411     ,                        !- Number of People
    4412     ,                        !- People per Zone Floor Area {person/m2}
-   4413     23.4,                   !- Zone Floor Area per Person {m2/person}
+   4413     26.6632227585,                   !- Zone Floor Area per Person {m2/person}
    4414     0.3000,                  !- Fraction Radiant
    4415     AUTOCALCULATE,           !- Sensible Heat Fraction
    4416     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4443,7 +4443,7 @@
    4434     BLDG_LIGHT_SCH,          !- Schedule Name
    4435     Watts/Area,              !- Design Level Calculation Method
    4436     ,                        !- Lighting Level {W}
-   4437     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4437     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4438     ,                        !- Watts per Person {W/person}
    4439     0.0000,                  !- Return Air Fraction
    4440     0.7000,                  !- Fraction Radiant
@@ -4458,7 +4458,7 @@
    4449     BLDG_LIGHT_SCH,          !- Schedule Name
    4450     Watts/Area,              !- Design Level Calculation Method
    4451     ,                        !- Lighting Level {W}
-   4452     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4452     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4453     ,                        !- Watts per Person {W/person}
    4454     0.0000,                  !- Return Air Fraction
    4455     0.7000,                  !- Fraction Radiant
@@ -4473,7 +4473,7 @@
    4464     BLDG_LIGHT_SCH,          !- Schedule Name
    4465     Watts/Area,              !- Design Level Calculation Method
    4466     ,                        !- Lighting Level {W}
-   4467     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4467     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4468     ,                        !- Watts per Person {W/person}
    4469     0.0000,                  !- Return Air Fraction
    4470     0.7000,                  !- Fraction Radiant
@@ -4488,7 +4488,7 @@
    4479     BLDG_LIGHT_SCH,          !- Schedule Name
    4480     Watts/Area,              !- Design Level Calculation Method
    4481     ,                        !- Lighting Level {W}
-   4482     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4482     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4483     ,                        !- Watts per Person {W/person}
    4484     0.0000,                  !- Return Air Fraction
    4485     0.7000,                  !- Fraction Radiant
@@ -4503,7 +4503,7 @@
    4494     BLDG_LIGHT_SCH,          !- Schedule Name
    4495     Watts/Area,              !- Design Level Calculation Method
    4496     ,                        !- Lighting Level {W}
-   4497     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4497     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4498     ,                        !- Watts per Person {W/person}
    4499     0.0000,                  !- Return Air Fraction
    4500     0.7000,                  !- Fraction Radiant
@@ -4518,7 +4518,7 @@
    4509     BLDG_LIGHT_SCH,          !- Schedule Name
    4510     Watts/Area,              !- Design Level Calculation Method
    4511     ,                        !- Lighting Level {W}
-   4512     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4512     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4513     ,                        !- Watts per Person {W/person}
    4514     0.0000,                  !- Return Air Fraction
    4515     0.7000,                  !- Fraction Radiant
@@ -4533,7 +4533,7 @@
    4524     BLDG_LIGHT_SCH,          !- Schedule Name
    4525     Watts/Area,              !- Design Level Calculation Method
    4526     ,                        !- Lighting Level {W}
-   4527     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4527     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4528     ,                        !- Watts per Person {W/person}
    4529     0.0000,                  !- Return Air Fraction
    4530     0.7000,                  !- Fraction Radiant
@@ -4548,7 +4548,7 @@
    4539     BLDG_LIGHT_SCH,          !- Schedule Name
    4540     Watts/Area,              !- Design Level Calculation Method
    4541     ,                        !- Lighting Level {W}
-   4542     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4542     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4543     ,                        !- Watts per Person {W/person}
    4544     0.0000,                  !- Return Air Fraction
    4545     0.7000,                  !- Fraction Radiant
@@ -4563,7 +4563,7 @@
    4554     BLDG_LIGHT_SCH,          !- Schedule Name
    4555     Watts/Area,              !- Design Level Calculation Method
    4556     ,                        !- Lighting Level {W}
-   4557     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4557     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4558     ,                        !- Watts per Person {W/person}
    4559     0.0000,                  !- Return Air Fraction
    4560     0.7000,                  !- Fraction Radiant
@@ -4578,7 +4578,7 @@
    4569     BLDG_LIGHT_SCH,          !- Schedule Name
    4570     Watts/Area,              !- Design Level Calculation Method
    4571     ,                        !- Lighting Level {W}
-   4572     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4572     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4573     ,                        !- Watts per Person {W/person}
    4574     0.0000,                  !- Return Air Fraction
    4575     0.7000,                  !- Fraction Radiant
@@ -4593,7 +4593,7 @@
    4584     BLDG_LIGHT_SCH,          !- Schedule Name
    4585     Watts/Area,              !- Design Level Calculation Method
    4586     ,                        !- Lighting Level {W}
-   4587     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4587     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4588     ,                        !- Watts per Person {W/person}
    4589     0.0000,                  !- Return Air Fraction
    4590     0.7000,                  !- Fraction Radiant
@@ -4608,7 +4608,7 @@
    4599     BLDG_LIGHT_SCH,          !- Schedule Name
    4600     Watts/Area,              !- Design Level Calculation Method
    4601     ,                        !- Lighting Level {W}
-   4602     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4602     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4603     ,                        !- Watts per Person {W/person}
    4604     0.0000,                  !- Return Air Fraction
    4605     0.7000,                  !- Fraction Radiant
@@ -4623,7 +4623,7 @@
    4614     BLDG_LIGHT_SCH,          !- Schedule Name
    4615     Watts/Area,              !- Design Level Calculation Method
    4616     ,                        !- Lighting Level {W}
-   4617     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4617     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4618     ,                        !- Watts per Person {W/person}
    4619     0.0000,                  !- Return Air Fraction
    4620     0.7000,                  !- Fraction Radiant
@@ -4638,7 +4638,7 @@
    4629     BLDG_LIGHT_SCH,          !- Schedule Name
    4630     Watts/Area,              !- Design Level Calculation Method
    4631     ,                        !- Lighting Level {W}
-   4632     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4632     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4633     ,                        !- Watts per Person {W/person}
    4634     0.0000,                  !- Return Air Fraction
    4635     0.7000,                  !- Fraction Radiant
@@ -4653,7 +4653,7 @@
    4644     BLDG_LIGHT_SCH,          !- Schedule Name
    4645     Watts/Area,              !- Design Level Calculation Method
    4646     ,                        !- Lighting Level {W}
-   4647     14.5,                    !- Watts per Zone Floor Area {W/m2}
+   4647     12.5078402461,                    !- Watts per Zone Floor Area {W/m2}
    4648     ,                        !- Watts per Person {W/person}
    4649     0.0000,                  !- Return Air Fraction
    4650     0.7000,                  !- Fraction Radiant
@@ -4671,7 +4671,7 @@
    4662     BLDG_EQUIP_SCH,          !- Schedule Name
    4663     Watts/Area,              !- Design Level Calculation Method
    4664     ,                        !- Design Level {W}
-   4665     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4665     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4666     ,                        !- Watts per Person {W/person}
    4667     0.0000,                  !- Fraction Latent
    4668     0.5000,                  !- Fraction Radiant
@@ -4684,7 +4684,7 @@
    4675     BLDG_EQUIP_SCH,          !- Schedule Name
    4676     Watts/Area,              !- Design Level Calculation Method
    4677     ,                        !- Design Level {W}
-   4678     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4678     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4679     ,                        !- Watts per Person {W/person}
    4680     0.0000,                  !- Fraction Latent
    4681     0.5000,                  !- Fraction Radiant
@@ -4697,7 +4697,7 @@
    4688     BLDG_EQUIP_SCH,          !- Schedule Name
    4689     Watts/Area,              !- Design Level Calculation Method
    4690     ,                        !- Design Level {W}
-   4691     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4691     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4692     ,                        !- Watts per Person {W/person}
    4693     0.0000,                  !- Fraction Latent
    4694     0.5000,                  !- Fraction Radiant
@@ -4710,7 +4710,7 @@
    4701     BLDG_EQUIP_SCH,          !- Schedule Name
    4702     Watts/Area,              !- Design Level Calculation Method
    4703     ,                        !- Design Level {W}
-   4704     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4704     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4705     ,                        !- Watts per Person {W/person}
    4706     0.0000,                  !- Fraction Latent
    4707     0.5000,                  !- Fraction Radiant
@@ -4723,7 +4723,7 @@
    4714     BLDG_EQUIP_SCH,          !- Schedule Name
    4715     Watts/Area,              !- Design Level Calculation Method
    4716     ,                        !- Design Level {W}
-   4717     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4717     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4718     ,                        !- Watts per Person {W/person}
    4719     0.0000,                  !- Fraction Latent
    4720     0.5000,                  !- Fraction Radiant
@@ -4736,7 +4736,7 @@
    4727     BLDG_EQUIP_SCH,          !- Schedule Name
    4728     Watts/Area,              !- Design Level Calculation Method
    4729     ,                        !- Design Level {W}
-   4730     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4730     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4731     ,                        !- Watts per Person {W/person}
    4732     0.0000,                  !- Fraction Latent
    4733     0.5000,                  !- Fraction Radiant
@@ -4749,7 +4749,7 @@
    4740     BLDG_EQUIP_SCH,          !- Schedule Name
    4741     Watts/Area,              !- Design Level Calculation Method
    4742     ,                        !- Design Level {W}
-   4743     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4743     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4744     ,                        !- Watts per Person {W/person}
    4745     0.0000,                  !- Fraction Latent
    4746     0.5000,                  !- Fraction Radiant
@@ -4762,7 +4762,7 @@
    4753     BLDG_EQUIP_SCH,          !- Schedule Name
    4754     Watts/Area,              !- Design Level Calculation Method
    4755     ,                        !- Design Level {W}
-   4756     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4756     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4757     ,                        !- Watts per Person {W/person}
    4758     0.0000,                  !- Fraction Latent
    4759     0.5000,                  !- Fraction Radiant
@@ -4775,7 +4775,7 @@
    4766     BLDG_EQUIP_SCH,          !- Schedule Name
    4767     Watts/Area,              !- Design Level Calculation Method
    4768     ,                        !- Design Level {W}
-   4769     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4769     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4770     ,                        !- Watts per Person {W/person}
    4771     0.0000,                  !- Fraction Latent
    4772     0.5000,                  !- Fraction Radiant
@@ -4788,7 +4788,7 @@
    4779     BLDG_EQUIP_SCH,          !- Schedule Name
    4780     Watts/Area,              !- Design Level Calculation Method
    4781     ,                        !- Design Level {W}
-   4782     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4782     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4783     ,                        !- Watts per Person {W/person}
    4784     0.0000,                  !- Fraction Latent
    4785     0.5000,                  !- Fraction Radiant
@@ -4801,7 +4801,7 @@
    4792     BLDG_EQUIP_SCH,          !- Schedule Name
    4793     Watts/Area,              !- Design Level Calculation Method
    4794     ,                        !- Design Level {W}
-   4795     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4795     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4796     ,                        !- Watts per Person {W/person}
    4797     0.0000,                  !- Fraction Latent
    4798     0.5000,                  !- Fraction Radiant
@@ -4814,7 +4814,7 @@
    4805     BLDG_EQUIP_SCH,          !- Schedule Name
    4806     Watts/Area,              !- Design Level Calculation Method
    4807     ,                        !- Design Level {W}
-   4808     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4808     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4809     ,                        !- Watts per Person {W/person}
    4810     0.0000,                  !- Fraction Latent
    4811     0.5000,                  !- Fraction Radiant
@@ -4827,7 +4827,7 @@
    4818     BLDG_EQUIP_SCH,          !- Schedule Name
    4819     Watts/Area,              !- Design Level Calculation Method
    4820     ,                        !- Design Level {W}
-   4821     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4821     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4822     ,                        !- Watts per Person {W/person}
    4823     0.0000,                  !- Fraction Latent
    4824     0.5000,                  !- Fraction Radiant
@@ -4840,7 +4840,7 @@
    4831     BLDG_EQUIP_SCH,          !- Schedule Name
    4832     Watts/Area,              !- Design Level Calculation Method
    4833     ,                        !- Design Level {W}
-   4834     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4834     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4835     ,                        !- Watts per Person {W/person}
    4836     0.0000,                  !- Fraction Latent
    4837     0.5000,                  !- Fraction Radiant
@@ -4853,7 +4853,7 @@
    4844     BLDG_EQUIP_SCH,          !- Schedule Name
    4845     Watts/Area,              !- Design Level Calculation Method
    4846     ,                        !- Design Level {W}
-   4847     22.8,                    !- Watts per Zone Floor Area {W/m2}
+   4847     57.4746578904,                    !- Watts per Zone Floor Area {W/m2}
    4848     ,                        !- Watts per Person {W/person}
    4849     0.0000,                  !- Fraction Latent
    4850     0.5000,                  !- Fraction Radiant
@@ -4871,7 +4871,7 @@
    4862     ,                        !- Design Flow Rate {m3/s}
    4863     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4864     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4865     0.675,                    !- Air Changes per Hour {1/hr}
+   4865     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4866     1.0000,                  !- Constant Term Coefficient
    4867     0.0000,                  !- Temperature Term Coefficient
    4868     0.0000,                  !- Velocity Term Coefficient
@@ -4885,7 +4885,7 @@
    4876     ,                        !- Design Flow Rate {m3/s}
    4877     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4878     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4879     0.675,                    !- Air Changes per Hour {1/hr}
+   4879     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4880     1.0000,                  !- Constant Term Coefficient
    4881     0.0000,                  !- Temperature Term Coefficient
    4882     0.0000,                  !- Velocity Term Coefficient
@@ -4899,7 +4899,7 @@
    4890     ,                        !- Design Flow Rate {m3/s}
    4891     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4892     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4893     0.675,                    !- Air Changes per Hour {1/hr}
+   4893     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4894     1.0000,                  !- Constant Term Coefficient
    4895     0.0000,                  !- Temperature Term Coefficient
    4896     0.0000,                  !- Velocity Term Coefficient
@@ -4913,7 +4913,7 @@
    4904     ,                        !- Design Flow Rate {m3/s}
    4905     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4906     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4907     0.675,                    !- Air Changes per Hour {1/hr}
+   4907     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4908     1.0000,                  !- Constant Term Coefficient
    4909     0.0000,                  !- Temperature Term Coefficient
    4910     0.0000,                  !- Velocity Term Coefficient
@@ -4927,7 +4927,7 @@
    4918     ,                        !- Design Flow Rate {m3/s}
    4919     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4920     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4921     0.675,                    !- Air Changes per Hour {1/hr}
+   4921     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4922     1.0000,                  !- Constant Term Coefficient
    4923     0.0000,                  !- Temperature Term Coefficient
    4924     0.0000,                  !- Velocity Term Coefficient
@@ -4941,7 +4941,7 @@
    4932     ,                        !- Design Flow Rate {m3/s}
    4933     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4934     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4935     0.675,                    !- Air Changes per Hour {1/hr}
+   4935     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4936     1.0000,                  !- Constant Term Coefficient
    4937     0.0000,                  !- Temperature Term Coefficient
    4938     0.0000,                  !- Velocity Term Coefficient
@@ -4955,7 +4955,7 @@
    4946     ,                        !- Design Flow Rate {m3/s}
    4947     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4948     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4949     0.675,                    !- Air Changes per Hour {1/hr}
+   4949     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4950     1.0000,                  !- Constant Term Coefficient
    4951     0.0000,                  !- Temperature Term Coefficient
    4952     0.0000,                  !- Velocity Term Coefficient
@@ -4969,7 +4969,7 @@
    4960     ,                        !- Design Flow Rate {m3/s}
    4961     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4962     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4963     0.675,                    !- Air Changes per Hour {1/hr}
+   4963     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4964     1.0000,                  !- Constant Term Coefficient
    4965     0.0000,                  !- Temperature Term Coefficient
    4966     0.0000,                  !- Velocity Term Coefficient
@@ -4983,7 +4983,7 @@
    4974     ,                        !- Design Flow Rate {m3/s}
    4975     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4976     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4977     0.675,                    !- Air Changes per Hour {1/hr}
+   4977     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4978     1.0000,                  !- Constant Term Coefficient
    4979     0.0000,                  !- Temperature Term Coefficient
    4980     0.0000,                  !- Velocity Term Coefficient
@@ -4997,7 +4997,7 @@
    4988     ,                        !- Design Flow Rate {m3/s}
    4989     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    4990     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   4991     0.675,                    !- Air Changes per Hour {1/hr}
+   4991     0.558775601673,                    !- Air Changes per Hour {1/hr}
    4992     1.0000,                  !- Constant Term Coefficient
    4993     0.0000,                  !- Temperature Term Coefficient
    4994     0.0000,                  !- Velocity Term Coefficient
@@ -5011,7 +5011,7 @@
    5002     ,                        !- Design Flow Rate {m3/s}
    5003     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    5004     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   5005     0.675,                    !- Air Changes per Hour {1/hr}
+   5005     0.558775601673,                    !- Air Changes per Hour {1/hr}
    5006     1.0000,                  !- Constant Term Coefficient
    5007     0.0000,                  !- Temperature Term Coefficient
    5008     0.0000,                  !- Velocity Term Coefficient
@@ -5025,7 +5025,7 @@
    5016     ,                        !- Design Flow Rate {m3/s}
    5017     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    5018     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   5019     0.675,                    !- Air Changes per Hour {1/hr}
+   5019     0.558775601673,                    !- Air Changes per Hour {1/hr}
    5020     1.0000,                  !- Constant Term Coefficient
    5021     0.0000,                  !- Temperature Term Coefficient
    5022     0.0000,                  !- Velocity Term Coefficient
@@ -5039,7 +5039,7 @@
    5030     ,                        !- Design Flow Rate {m3/s}
    5031     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    5032     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   5033     0.675,                    !- Air Changes per Hour {1/hr}
+   5033     0.558775601673,                    !- Air Changes per Hour {1/hr}
    5034     1.0000,                  !- Constant Term Coefficient
    5035     0.0000,                  !- Temperature Term Coefficient
    5036     0.0000,                  !- Velocity Term Coefficient
@@ -5053,7 +5053,7 @@
    5044     ,                        !- Design Flow Rate {m3/s}
    5045     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    5046     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   5047     0.675,                    !- Air Changes per Hour {1/hr}
+   5047     0.558775601673,                    !- Air Changes per Hour {1/hr}
    5048     1.0000,                  !- Constant Term Coefficient
    5049     0.0000,                  !- Temperature Term Coefficient
    5050     0.0000,                  !- Velocity Term Coefficient
@@ -5067,7 +5067,7 @@
    5058     ,                        !- Design Flow Rate {m3/s}
    5059     ,                        !- Flow per Zone Floor Area {m3/s-m2}
    5060     ,                        !- Flow per Exterior Surface Area {m3/s-m2}
-   5061     0.675,                    !- Air Changes per Hour {1/hr}
+   5061     0.558775601673,                    !- Air Changes per Hour {1/hr}
    5062     1.0000,                  !- Constant Term Coefficient
    5063     0.0000,                  !- Temperature Term Coefficient
    5064     0.0000,                  !- Velocity Term Coefficient
@@ -6663,7 +6663,7 @@
    6654     ALWAYS_ON,               !- Availability Schedule Name
    6655     AUTOSIZE,                !- High Speed Gross Rated Total Cooling Capacity {W}
    6656     AUTOSIZE,                !- High Speed Rated Sensible Heat Ratio
-   6657     2.65,                     !- High Speed Gross Rated Cooling COP {W/W}
+   6657     2.92984268827,                     !- High Speed Gross Rated Cooling COP {W/W}
    6658     AUTOSIZE,                !- High Speed Rated Air Flow Rate {m3/s}
    6659     ,                        !- Unit Internal Static Air Pressure {Pa}
    6660     PVAV_REHEAT_1_OA-PVAV_REHEAT_1_CoolC 1Node,  !- Air Inlet Node Name
@@ -6675,7 +6675,7 @@
    6666     PVAV_REHEAT_1_CoolC 1_ClgPlrCurve,  !- Part Load Fraction Correlation Curve Name
    6667     AUTOSIZE,                !- Low Speed Gross Rated Total Cooling Capacity {W}
    6668     0.69,                    !- Low Speed Gross Rated Sensible Heat Ratio
-   6669     2.65,                     !- Low Speed Gross Rated Cooling COP {W/W}
+   6669     2.92984268827,                     !- Low Speed Gross Rated Cooling COP {W/W}
    6670     AUTOSIZE,                !- Low Speed Rated Air Flow Rate {m3/s}
    6671     PVAV_REHEAT_1_CoolC 1_ClgLowSpdCapFuncTempCurve,  !- Low Speed Total Cooling Capacity Function of Temperature Curve Name
    6672     PVAV_REHEAT_1_CoolC 1_ClgLowSpdEirFuncTempCurve,  !- Low Speed Energy Input Ratio Function of Temperature Curve Name
@@ -7646,7 +7646,7 @@
    7637     HeatSys1 Boiler,         !- Name
    7638     NATURALGAS,              !- Fuel Type
    7639     AUTOSIZE,                !- Nominal Capacity {W}
-   7640     0.72,                    !- Nominal Thermal Efficiency
+   7640     0.673567714511,                    !- Nominal Thermal Efficiency
    7641     LeavingBoiler,           !- Efficiency Curve Temperature Evaluation Variable
    7642     ,                        !- Normalized Boiler Efficiency Curve Name
    7643     82.2000,                 !- Design Water Outlet Temperature {C}
