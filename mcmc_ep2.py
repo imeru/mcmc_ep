@@ -74,10 +74,7 @@ def likelihood(param):
     #---------------------------------
     """
     count = 1
-    chain = []
-    for item in param:
-        temp =[item]
-        chain.append(temp)
+    chain = make_chainlist(param)
     
     global markup_values_pairs, markup_value_pairs, path
     markup_values_pairs = dict(zip(['@@ROOF@@','@@WALL@@','@@WIN@@',
@@ -119,7 +116,13 @@ def run_metropolis_MCMC(startvalue, iterations):
             chain[i] = list(chain[i-1])
     return chain
 
-
+# To make chain list
+def make_chainlist(list):
+    chain = []
+    for item in list:
+        temp =[item]
+        chain.append(temp)
+    return chain
 
 
 
@@ -136,12 +139,8 @@ output_folder = "test/out"
 #sys.argv[1]
 totalarea = 10336.99
 count = 1
-chain = []
-for item in startvalue:
-    temp =[item]
-    chain.append(temp)
-    
 
+chain = make_chainlist(startvalue)
 markup_values_pairs = dict(zip(['@@ROOF@@','@@WALL@@','@@WIN@@',
                                 '@@SHGC@@','@@EPD@@','@@LPD@@',
                                 '@@HSP@@','@@CSP@@','@@OCC@@',
