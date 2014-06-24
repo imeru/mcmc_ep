@@ -56,7 +56,7 @@ def prepare_job_folders(output_folder, template_idf_path,
 
     
 
-def run_eplus(path):
+def run_eplus(path, totalarea):
     current_dir = os.getcwd()
     os.chdir(path)
     call(["EnergyPlus"])

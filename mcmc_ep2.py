@@ -5,10 +5,10 @@ import numpy as np
 import pandas as pd
 import math
 from scipy.stats import triang, norm
-from runenergyplus import prepare_job_folders, run_eplus
+from runenergyplus import prepare_job_folders, run_eplus, generate_markup_value_pairs
 
 
-
+global markup_values_pairs, markup_value_pairs, path, totalarea
 
 def tri_logdensity(x, min, max, mode):
     loc = min
@@ -90,7 +90,7 @@ def likelihood(param):
     path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
     
     # Run energyplus and get eui value
-    prediction = run_eplus(path)
+    prediction = run_eplus(path, totalarea)
          
     singlelikelihoods = norm.logpdf(x=y, loc=prediction, scale=sd)
     #sumll = sum(singlelikelihoods)
@@ -128,18 +128,32 @@ def run_metropolis_MCMC(startvalue, iterations):
 y = 1.7
 sd = 0.1
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
-iterations = 5
+iterations = 3
 # initial values
 template_idf_path = "test/campusbuilding.idf"
 eplus_basic_folder = "test/basic_files"
 output_folder = "test/out"
 #sys.argv[1]
 totalarea = 10336.99
+count = 1
+chain = []
+for item in startvalue:
+    temp =[item]
+    chain.append(temp)
+    
+
+markup_values_pairs = dict(zip(['@@ROOF@@','@@WALL@@','@@WIN@@',
+                                '@@SHGC@@','@@EPD@@','@@LPD@@',
+                                '@@HSP@@','@@CSP@@','@@OCC@@',
+                                '@@INF@@','@@Boiler@@','@@COP@@'], chain))
+
+markup_value_pairs = generate_markup_value_pairs(markup_values_pairs, count)
+path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
 
 import time
 start_time = time.time()
-run_metropolis_MCMC(startvalue, iterations)
+chain = run_metropolis_MCMC(startvalue, iterations)
 print time.time() - start_time, "seconds"
-#print chain
+print chain
 
 
