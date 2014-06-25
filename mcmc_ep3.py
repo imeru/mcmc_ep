@@ -142,8 +142,8 @@ def make_chainlist(list):
 
 #Run
 # Observation value
-y = 1.7
-sd = 0.1
+y = 1.619888
+sd = 0.43
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
 iterations = 10
 # initial values
