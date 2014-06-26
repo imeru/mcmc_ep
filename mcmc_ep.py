@@ -4,18 +4,12 @@
 import numpy as np
 import pandas as pd
 import math
-from scipy.stats import triang, norm
-import time
-
-# For Driver
-import sys
 import os
-import shutil
-import csv
-from subprocess import call
+from scipy.stats import triang, norm
+from runenergyplus import prepare_job_folders, run_eplus
 
 
-
+#global markup_values_pairs, markup_value_pairs, path, totalarea
 
 def tri_logdensity(x, min, max, mode):
     loc = min
@@ -71,34 +65,8 @@ def likelihood(param):
     Boiler = param[10]
     COP = param[11]
     
-    """
-    #---------------------------------
-    #to do: get the EUI from energyplus
-    prediction = -0.2177929 - 0.2458677 * ROOF - 0.3842544 * WALL - 0.0049753 * WIN  \
-        + 0.0176093 * SHGC + 0.014322 * EPD + 0.0125891 * LPD + 0.0518334 * HSP \
-        +0.0026691 * CSP + 0.0003318 * OCC + 0.5664563* INF - 0.6163375 * Boiler \
-        - 0.0425599 * COP
-    #---------------------------------
-    """
-    count = 1
-    chain = []
-    for item in param:
-        temp =[item]
-        chain.append(temp)
-    
-    global markup_values_pairs, markup_value_pairs, path
-    markup_values_pairs = dict(zip(['@@ROOF@@','@@WALL@@','@@WIN@@',
-                                '@@SHGC@@','@@EPD@@','@@LPD@@',
-                                '@@HSP@@','@@CSP@@','@@OCC@@',
-                                '@@INF@@','@@Boiler@@','@@COP@@'], chain))
-
-    # prepares jobs
-    markup_value_pairs = generate_markup_value_pairs(markup_values_pairs, count)
-    path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
-    
-    # Run energyplus and get eui value
-    prediction = run_eplus(path)
-         
+    prediction = param[12]
+        
     singlelikelihoods = norm.logpdf(x=y, loc=prediction, scale=sd)
     #sumll = sum(singlelikelihoods)
     return singlelikelihoods
@@ -109,117 +77,127 @@ def posterior(param):
     return likelihood(param) + prior(param)
 
 
-#Proposal function
-def proposalfunction(param):
-    return abs(np.random.normal(loc=param, scale=[0.02,0.015,0.43,0.1,7,4,1.3,1.3,6.75,0.19,0.06,0.167]))
+#Proposal function- .tolist:to change numpy.ndarray to list
 
-#Metro-Polis MCMC
-def run_metropolis_MCMC(startvalue, iterations):
+def proposalfunction(param):
+    return abs(np.random.normal(loc=param, scale=[0.02,0.015,0.43,0.1,7,4,1.3,1.3,6.75,0.19,0.5,0.167])).tolist()
+ 
+
+
+#Run metro-polis MCMC ######################################TEST
+def run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path, eplus_basic_folder, 
+                        path, totalarea):
     chain = [[0 for x in xrange(12)] for x in xrange(iterations)]
-    chain[0] = startvalue
+    chain[0][0] = startvalue[0]
+    chain[0][1] = startvalue[1]
+    chain[0][2] = startvalue[2]
+    chain[0][3] = startvalue[3]
+    chain[0][4] = startvalue[4]
+    chain[0][5] = startvalue[5]
+    chain[0][6] = startvalue[6]
+    chain[0][7] = startvalue[7]
+    chain[0][8] = startvalue[8]
+    chain[0][9] = startvalue[9]
+    chain[0][10] = startvalue[10]
+    chain[0][11] = startvalue[11]
+    
+    prediction = run_eplus(path, totalarea)
+    chain[0].append(prediction)
+    
     for i in range(1,iterations):
-        proposal = proposalfunction(chain[i-1])
+        while True:
+            try:
+                current_dir = os.getcwd()
+                proposal = proposalfunction(chain[i-1][:-1])
+                
+        # prepare jobs
+                #chainlist = make_chainlist(proposal)
+                #markup_values_pairs = generate_markup_values_pairs(markup,chain)
+                #markup_value_pairs = generate_markup_value_pairs(markup_values_pairs, count)
+                markup_value_pairs = generate_markup_value_pairs(markup, proposal)
+                path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
+                prediction = run_eplus(path, totalarea)
+                proposal.append(prediction) 
+                break
+            except:
+                os.chdir(current_dir)
+                pass
+
+        
         probab = min(1, math.exp(posterior(proposal) - posterior(chain[i-1])))
-        if np.random.uniform() < probab:
+        if np.random.uniform() < probab :
             chain[i] = list(proposal)
         else:
             chain[i] = list(chain[i-1])
     return chain
 
-# initial values
+
+# To make chain list
+def make_chainlist(list):
+    chain = []
+    for item in list:
+        temp =[item]
+        chain.append(temp)
+    return chain
+
+import csv
+import os
+    
+def make_csv(chain):
+    with open(os.path.join("test", 'chain_ep.csv'), 'wb') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames = ['ROOF','WALL','WIN','SHGC','EPD','LPD',
+                    'HSP','CSP','OCC','INF','Boiler','COP','EUI'], delimiter = ',')
+        writer.writeheader()
+        writer = csv.writer(csvfile)
+        writer.writerows(chain)
+
+def generate_markup_value_pairs(markup, chain):
+    markup_value_pairs = []
+    markup_value_pairs.append(dict(zip(markup, chain)))
+    return markup_value_pairs
+
+
+# Initial values __________________________________________________________________________
+    # Observation value
+y = 1.619888
+sd = 0.43
+    # Set pathes amd folder
 template_idf_path = "test/campusbuilding.idf"
 eplus_basic_folder = "test/basic_files"
 output_folder = "test/out"
 #sys.argv[1]
-totalarea = 10336.99
 
-
-
-#Run
-# Observation value
-y = 1.7
-sd = 0.1
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
-iterations = 2
+iterations = 5
+totalarea = 10336.99
+count = 1
+markup = ['@@ROOF@@','@@WALL@@','@@WIN@@', '@@SHGC@@','@@EPD@@','@@LPD@@',
+            '@@HSP@@','@@CSP@@','@@OCC@@','@@INF@@','@@Boiler@@','@@COP@@']
+
+# prepare jobs
+#chain = make_chainlist(startvalue)
+
+markup_value_pairs = generate_markup_value_pairs(markup,startvalue)
+
+#markup_values_pairs = dict(zip(['@@ROOF@@','@@WALL@@','@@WIN@@',
+#                                '@@SHGC@@','@@EPD@@','@@LPD@@',
+#                                '@@HSP@@','@@CSP@@','@@OCC@@',
+#                                '@@INF@@','@@Boiler@@','@@COP@@'], chain))
+
+#markup_value_pairs = generate_markup_value_pairs(markup_values_pairs, count)
 
 
+path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
+
+"""
+# RUN!!
 import time
 start_time = time.time()
-run_metropolis_MCMC(startvalue, iterations)
+chain = run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path, 
+                             eplus_basic_folder, path, totalarea)
 print time.time() - start_time, "seconds"
-#print chain
+print chain
+make_csv(chain)
 
-
-
-# Execute Energyplys 
-
-
-def replace_markup(line, markup_value_pairs):
-    for markup in markup_value_pairs.keys():
-        line = line.replace(markup, str(markup_value_pairs[markup]))
-    return line
-
-
-def generate_markup_value_pairs(markup_values_pairs, count):
-    markup_value_pairs  = []
-    for index in range(count):
-        markup_value = {}
-        for key in markup_values_pairs:
-            markup_value[key] = markup_values_pairs[key].pop()
-        markup_value_pairs.append(markup_value)
-    return markup_value_pairs
-
-
-def write_idf(template_path, output_path, markup_value_pairs):
-    origin = open(template_path, 'r')
-    new = open(output_path, 'w')
-    for line in origin:
-        replaced_line = replace_markup(line, markup_value_pairs)
-        new.write(replaced_line)
-    origin.close()
-    new.close()
-
-           
-def copy_files(orig, dest):
-    files = os.listdir(orig)
-    for file_name in files:
-        file_path = os.path.join(orig, file_name)
-        shutil.copy(file_path, dest)
-
-def prepare_job_folders(output_folder, template_idf_path,
-                        eplus_basic_folder, markup_value_pairs):
-    # check output path
-    if os.path.exists(output_folder):
-        shutil.rmtree(output_folder)
-    pathes = []
-    for index, markup_value_pair in enumerate(markup_value_pairs):
-        path_to_write = output_folder + "/" + str(index)
-        pathes.append(path_to_write)
-        output_path = path_to_write + "/" + "in.idf"
-        os.makedirs(path_to_write)
-        copy_files(eplus_basic_folder, path_to_write)
-        write_idf(template_idf_path, output_path, markup_value_pair)
-        path = pathes[0]
-    return path
-
-    
-
-def run_eplus(path):
-    current_dir = os.getcwd()
-    os.chdir(path)
-    call(["EnergyPlus"])
-    call(["ReadVarsESO", "my_results.rvi"])
-    eui = get_eui(totalarea)
-    os.chdir(current_dir)
-    return eui 
-
-
-def get_eui(totalarea):
-    with open('eplusout.csv', 'rb') as f:
-        reader = csv.reader(f)
-        reader = list(reader)
-        gas = float(reader[1][1])
-        elec = float(reader[1][2])
-        eui = (gas + elec) / totalarea / 10e8
-    return eui
-
+# _____________________________________________________________________________________
+"""
