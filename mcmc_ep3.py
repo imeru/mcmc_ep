@@ -4,6 +4,7 @@
 import numpy as np
 import pandas as pd
 import math
+import os
 from scipy.stats import triang, norm
 from runenergyplus import prepare_job_folders, run_eplus, generate_markup_value_pairs
 
@@ -85,8 +86,8 @@ def posterior(param):
 #Proposal function- .tolist:to change numpy.ndarray to list
 
 def proposalfunction(param):
-    return abs(np.random.normal(loc=param, scale=[0.02,0.015,0.43,0.1,7,4,1.3,1.3,6.75,0.19,0.06,0.167])).tolist()
-
+    return abs(np.random.normal(loc=param, scale=[0.02,0.015,0.43,0.1,7,4,1.3,1.3,6.75,0.19,0.5,0.167])).tolist()
+ 
 
 
 #Run metro-polis MCMC ######################################TEST
@@ -110,17 +111,25 @@ def run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path
     chain[0].append(prediction)
     
     for i in range(1,iterations):
-        proposal = proposalfunction(chain[i-1][:-1])
-        chainlist = make_chainlist(proposal)
-        markup_values_pairs = dict(zip(['@@ROOF@@','@@WALL@@','@@WIN@@',
+        while True:
+            try:
+                current_dir = os.getcwd()
+                proposal = proposalfunction(chain[i-1][:-1])
+                chainlist = make_chainlist(proposal)
+                markup_values_pairs = dict(zip(['@@ROOF@@','@@WALL@@','@@WIN@@',
                                 '@@SHGC@@','@@EPD@@','@@LPD@@',
                                 '@@HSP@@','@@CSP@@','@@OCC@@',
                                 '@@INF@@','@@Boiler@@','@@COP@@'], chainlist))
         # prepares jobs
-        markup_value_pairs = generate_markup_value_pairs(markup_values_pairs, count)
-        path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
-        prediction = run_eplus(path, totalarea)
-        proposal.append(prediction) 
+                markup_value_pairs = generate_markup_value_pairs(markup_values_pairs, count)
+                path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
+                prediction = run_eplus(path, totalarea)
+                proposal.append(prediction) 
+                break
+            except:
+                os.chdir(current_dir)
+                pass
+
         
         probab = min(1, math.exp(posterior(proposal) - posterior(chain[i-1])))
         if np.random.uniform() < probab :
