@@ -5,8 +5,9 @@ import numpy as np
 import pandas as pd
 import math
 import os
-from scipy.stats import triang, norm
+from scipy.stats import triang, norm, truncnorm
 from runenergyplus import prepare_job_folders, run_eplus
+import csv
 
 
 #global markup_values_pairs, markup_value_pairs, path, totalarea
@@ -17,6 +18,12 @@ def tri_logdensity(x, min, max, mode):
     c = (mode - min)/scale
     log_density = triang.logpdf(x = x, c = c, loc = loc, scale = scale)
     return log_density
+
+def truncated_normal(myclip_min, myclip_max, mu, sigma, n=1):
+    a = (myclip_min - mu) / sigma
+    b = (myclip_max - mu) / sigma
+    c = truncnorm.rvs(a, b, loc=mu, scale=sigma,size=n)
+    return c
 
 # Priors 
 def prior(param):
@@ -68,8 +75,8 @@ def likelihood(param):
     prediction = param[12]
         
     singlelikelihoods = norm.logpdf(x=y, loc=prediction, scale=sd)
-    #sumll = sum(singlelikelihoods)
-    return singlelikelihoods
+    sumll = sum(singlelikelihoods)
+    return sumll
 
 
 #Posterior 
@@ -79,14 +86,22 @@ def posterior(param):
 
 #Proposal function- .tolist:to change numpy.ndarray to list
 
-def proposalfunction(param):
-    return abs(np.random.normal(loc=param, scale=[0.02,0.015,0.43,0.1,7,4,1.3,1.3,6.75,0.19,0.5,0.167])).tolist()
+#def proposalfunction(param):
+#    return abs(np.random.normal(loc=param, scale=[0.02,0.015,0.43,0.1,7,4,1.3,1.3,6.75,0.19,0.5,0.167])).tolist()
  
+
+def proposalfunction(low_limit, upper_limit, mean, sd):
+    proposal = []
+    for i in range(0,len(mean)):
+        proposal.extend(truncated_normal(low_limit[i], upper_limit[i], mean[i], sd[i]).tolist())
+    return proposal
+        
 
 
 #Run metro-polis MCMC ######################################TEST
-def run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path, eplus_basic_folder, 
-                        path, totalarea):
+#def run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path, eplus_basic_folder, 
+#                        path, totalarea):
+def run_metropolis_MCMC(path):
     chain = [[0 for x in xrange(12)] for x in xrange(iterations)]
     chain[0][0] = startvalue[0]
     chain[0][1] = startvalue[1]
@@ -108,7 +123,7 @@ def run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path
         while True:
             try:
                 current_dir = os.getcwd()
-                proposal = proposalfunction(chain[i-1][:-1])
+                proposal = proposalfunction(low_limit, upper_limit, chain[i-1][:-1], sd)
                 
         # prepare jobs
                 #chainlist = make_chainlist(proposal)
@@ -140,8 +155,7 @@ def make_chainlist(list):
         chain.append(temp)
     return chain
 
-import csv
-import os
+
     
 def make_csv(chain):
     with open(os.path.join("test", 'chain_ep.csv'), 'wb') as csvfile:
@@ -155,8 +169,20 @@ def generate_markup_value_pairs(markup, chain):
     markup_value_pairs = []
     markup_value_pairs.append(dict(zip(markup, chain)))
     return markup_value_pairs
-
-
+"""
+[{'@@Boiler@@': 0.72,
+  '@@COP@@': 2.65,
+  '@@CSP@@': 24,
+  '@@EPD@@': 22.8,
+  '@@HSP@@': 21,
+  '@@INF@@': 0.675,
+  '@@LPD@@': 14.5,
+  '@@OCC@@': 23.4,
+  '@@ROOF@@': 0.09667,
+  '@@SHGC@@': 0.5,
+  '@@WALL@@': 0.055,
+  '@@WIN@@': 2.792}]
+"""
 # Initial values __________________________________________________________________________
     # Observation value
 y = 1.619888
@@ -168,6 +194,11 @@ output_folder = "test/out"
 #sys.argv[1]
 
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
+    # Set the range for proposal function
+low_limit = [0.01, 0.01, 0.1, 0.1, 1, 1, 17, 17, 1, 0.1, 0.5, 2]
+upper_limit = [0.5, 0.5, 8, 1, 100, 80, 28, 28, 50, 4, 0.99, 5]
+sd = [0.02, 0.015, 0.43, 0.1, 7, 4, 1.3, 1.3, 6.75, 0.19, 0.5, 0.167]
+
 iterations = 5
 totalarea = 10336.99
 count = 1
@@ -189,15 +220,15 @@ markup_value_pairs = generate_markup_value_pairs(markup,startvalue)
 
 path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
 
-"""
+
 # RUN!!
 import time
 start_time = time.time()
-chain = run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path, 
-                             eplus_basic_folder, path, totalarea)
+#chain = run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path, 
+#                             eplus_basic_folder, path, totalarea)
+chain = run_metropolis_MCMC(path)
 print time.time() - start_time, "seconds"
 print chain
 make_csv(chain)
 
 # _____________________________________________________________________________________
-"""

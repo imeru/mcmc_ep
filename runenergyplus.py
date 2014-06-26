@@ -12,14 +12,14 @@ def replace_markup(line, markup_value_pairs):
     return line
 
 
-def generate_markup_value_pairs(markup_values_pairs, count):
-    markup_value_pairs  = []
-    for index in range(count):
-        markup_value = {}
-        for key in markup_values_pairs:
-            markup_value[key] = markup_values_pairs[key].pop()
-        markup_value_pairs.append(markup_value)
-    return markup_value_pairs
+#def generate_markup_value_pairs(markup_values_pairs, count):
+#    markup_value_pairs  = []
+#    for index in range(count):
+#        markup_value = {}
+#        for key in markup_values_pairs:
+#            markup_value[key] = markup_values_pairs[key].pop()
+#        markup_value_pairs.append(markup_value)
+#    return markup_value_pairs
 
 
 def write_idf(template_path, output_path, markup_value_pairs):
