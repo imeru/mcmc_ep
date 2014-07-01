@@ -157,13 +157,13 @@ def run_metropolis_MCMC(startvalue, iterations):
 y = 1.7
 sd = 0.1
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
-iterations = 100
+iterations = 5000
 
 import time
 start_time = time.time()
 chain = run_metropolis_MCMC(startvalue, iterations)
 print time.time() - start_time, "seconds"
-print chain
+#print chain
 
 
 #TODO:  make CSV file 
