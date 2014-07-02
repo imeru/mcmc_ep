@@ -227,8 +227,15 @@ start_time = time.time()
 #chain = run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path, 
 #                             eplus_basic_folder, path, totalarea)
 chain = run_metropolis_MCMC(path)
-print time.time() - start_time, "seconds"
-print chain
+print "Simulation time:",time.time() - start_time, "seconds"
+#print chain
+
+# Acceptance
+import itertools
+chain.sort()
+print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / float(iterations)
+
+# make CSV file
 make_csv(chain)
 
 # _____________________________________________________________________________________

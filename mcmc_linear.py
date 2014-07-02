@@ -157,16 +157,22 @@ def run_metropolis_MCMC(startvalue, iterations):
 y = 1.7
 sd = 0.1
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
-iterations = 5000
+iterations = 100
 
 import time
 start_time = time.time()
 chain = run_metropolis_MCMC(startvalue, iterations)
-print time.time() - start_time, "seconds"
+print "Simulation time:",time.time() - start_time, "seconds"
 #print chain
+#print type(chain)
 
 
-#TODO:  make CSV file 
+import itertools
+chain.sort()
+print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / float(iterations)
+
+
+#make CSV file 
 import csv
 import os
     
