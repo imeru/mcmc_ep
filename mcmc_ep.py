@@ -52,8 +52,8 @@ def prior(param):
     INF_prior = tri_logdensity(x = INF, min = 0.1, max = 2, mode = 0.675)
     Boiler_prior = tri_logdensity(x = Boiler, min = 0.5, max = 0.99, mode = 0.72)
     COP_prior = tri_logdensity(x = COP, min = 2, max = 4, mode = 2.65)
-    return ROOF_prior+WALL_prior+WIN_prior+SHGC_prior+EPD_prior+LPD_prior\
-        +HSP_prior+CSP_prior+OCC_prior+INF_prior+Boiler_prior+COP_prior
+    return ROOF_prior+WALL_prior+WIN_prior+SHGC_prior+EPD_prior+LPD_prior+ \
+            HSP_prior+CSP_prior+OCC_prior+INF_prior+Boiler_prior+COP_prior
 
 
 
@@ -75,8 +75,8 @@ def likelihood(param):
     prediction = param[12]
         
     singlelikelihoods = norm.logpdf(x=y, loc=prediction, scale=sd)
-    sumll = sum(singlelikelihoods)
-    return sumll
+    #sumll = sum(singlelikelihoods)
+    return singlelikelihoods
 
 
 #Posterior 
@@ -90,10 +90,10 @@ def posterior(param):
 #    return abs(np.random.normal(loc=param, scale=[0.02,0.015,0.43,0.1,7,4,1.3,1.3,6.75,0.19,0.5,0.167])).tolist()
  
 
-def proposalfunction(low_limit, upper_limit, mean, sd):
+def proposalfunction(low_limit, upper_limit, mean, proposal_sd):
     proposal = []
     for i in range(0,len(mean)):
-        proposal.extend(truncated_normal(low_limit[i], upper_limit[i], mean[i], sd[i]).tolist())
+        proposal.extend(truncated_normal(low_limit[i], upper_limit[i], mean[i], proposal_sd[i]).tolist())
     return proposal
         
 
@@ -123,7 +123,7 @@ def run_metropolis_MCMC(path):
         while True:
             try:
                 current_dir = os.getcwd()
-                proposal = proposalfunction(low_limit, upper_limit, chain[i-1][:-1], sd)
+                proposal = proposalfunction(low_limit, upper_limit, chain[i-1][:-1], proposal_sd)
                 
         # prepare jobs
                 #chainlist = make_chainlist(proposal)
@@ -197,9 +197,9 @@ startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72,
     # Set the range for proposal function
 low_limit = [0.01, 0.01, 0.1, 0.1, 1, 1, 17, 17, 1, 0.1, 0.5, 2]
 upper_limit = [0.5, 0.5, 8, 1, 100, 80, 28, 28, 50, 4, 0.99, 5]
-sd = [0.02, 0.015, 0.43, 0.1, 7, 4, 1.3, 1.3, 6.75, 0.19, 0.5, 0.167]
+proposal_sd = [0.02, 0.015, 0.43, 0.1, 7, 4, 1.3, 1.3, 6.75, 0.19, 0.5, 0.167]
 
-iterations = 5
+iterations = 20
 totalarea = 10336.99
 count = 1
 markup = ['@@ROOF@@','@@WALL@@','@@WIN@@', '@@SHGC@@','@@EPD@@','@@LPD@@',
@@ -220,7 +220,6 @@ markup_value_pairs = generate_markup_value_pairs(markup,startvalue)
 
 path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
 
-
 # RUN!!
 import time
 start_time = time.time()
@@ -237,5 +236,4 @@ print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / 
 
 # make CSV file
 make_csv(chain)
-
-# _____________________________________________________________________________________
+# ____________________________________________________________________________________
