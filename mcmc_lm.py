@@ -93,7 +93,7 @@ def make_chainlist(list):
         chain.append(temp)
     return chain
 
-
+"""
 #Run metro-polis MCMC
 def run_metropolis_MCMC(startvalue, iterations):
     chain = [[0 for x in xrange(12)] for x in xrange(iterations)]
@@ -110,11 +110,47 @@ def run_metropolis_MCMC(startvalue, iterations):
             chain[i] = list(chain[i-1])
             chain[i] = chain[i-1].append(temp2[1])
     return chain
-
+"""
 
 
 #TODO : Simplified!!!
-
+"""
+#Run metro-polis MCMC
+def run_metropolis_MCMC(startvalue, iterations):
+    chain = [[0 for x in xrange(12)] for x in xrange(iterations)]
+    chain[0][0] = startvalue[0]
+    chain[0][1] = startvalue[1]
+    chain[0][2] = startvalue[2]
+    chain[0][3] = startvalue[3]
+    chain[0][4] = startvalue[4]
+    chain[0][5] = startvalue[5]
+    chain[0][6] = startvalue[6]
+    chain[0][7] = startvalue[7]
+    chain[0][8] = startvalue[8]
+    chain[0][9] = startvalue[9]
+    chain[0][10] = startvalue[10]
+    chain[0][11] = startvalue[11]
+    prediction = -0.2177929 - 0.2458677 * chain[0][0] - 0.3842544 * chain[0][1] \
+    - 0.0049753 * chain[0][2]  + 0.0176093 * chain[0][3] + 0.014322 * chain[0][4] \
+    + 0.0125891 * chain[0][5] + 0.0518334 * chain[0][6] + 0.0026691 * chain[0][7] \
+    + 0.0003318 * chain[0][8] + 0.5664563* chain[0][9] - 0.6163375 * chain[0][10] \
+    - 0.0425599 * chain[0][11]
+    chain[0].append(prediction)        
+    for i in range(1,iterations):
+        proposal = proposalfunction(chain[i-1][:-1])
+        prediction = -0.2177929 - 0.2458677 * proposal[0] - 0.3842544 * proposal[1] \
+    - 0.0049753 * proposal[2]  + 0.0176093 * proposal[3] + 0.014322 * proposal[4] \
+    + 0.0125891 * proposal[5] + 0.0518334 * proposal[6] + 0.0026691 * proposal[7] \
+    + 0.0003318 * proposal[8] + 0.5664563* proposal[9] - 0.6163375 * proposal[10] \
+    - 0.0425599 * proposal[11]
+        proposal.append(prediction)
+        probab = min(1, math.exp(posterior(proposal) - posterior(chain[i-1])))
+        if np.random.uniform() < probab:
+            chain[i] = list(proposal)
+        else:
+            chain[i] = list(chain[i-1])
+    return chain
+"""
 #Run metro-polis MCMC
 def run_metropolis_MCMC(startvalue, iterations):
     chain = [[0 for x in xrange(12)] for x in xrange(iterations)]
@@ -151,13 +187,14 @@ def run_metropolis_MCMC(startvalue, iterations):
             chain[i] = list(chain[i-1])
     return chain
 
+
 #Run
 
 # Observation value
 y = 1.7
 sd = 0.1
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
-iterations = 100
+iterations = 1000
 
 import time
 start_time = time.time()
@@ -168,7 +205,6 @@ print "Simulation time:",time.time() - start_time, "seconds"
 
 
 import itertools
-chain.sort()
 print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / float(iterations)
 
 
@@ -176,7 +212,7 @@ print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / 
 import csv
 import os
     
-with open(os.path.join("", 'chain1.csv'), 'wb') as csvfile:
+with open(os.path.join("", 'chain_linear.csv'), 'wb') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames = ['ROOF','WALL','WIN','SHGC','EPD','LPD',
                     'HSP','CSP','OCC','INF','Boiler','COP','EUI'], delimiter = ',')
     writer.writeheader()

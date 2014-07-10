@@ -1,3 +1,13 @@
+# -------------------------------------------------------------------
+# Markov Chain Monte Calro for EnergyPlus
+# 
+# code by Hyunwoo Lim (thanks to sangheestyle)
+# 07/07/2014
+# -------------------------------------------------------------------
+# UM Campus 
+# This code is for 12 parameters. 
+# Parameter ranges are changed. 
+# You need to modify the idf file to insert mark. (e.g. @@WALL@@, @@WIN@@)
 
 
 # Import relevant modules
@@ -131,6 +141,7 @@ def run_metropolis_MCMC(path):
                 #markup_value_pairs = generate_markup_value_pairs(markup_values_pairs, count)
                 markup_value_pairs = generate_markup_value_pairs(markup, proposal)
                 path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
+                print "___________________________",i, "th iteration____________________________________"
                 prediction = run_eplus(path, totalarea)
                 proposal.append(prediction) 
                 break
@@ -142,8 +153,10 @@ def run_metropolis_MCMC(path):
         probab = min(1, math.exp(posterior(proposal) - posterior(chain[i-1])))
         if np.random.uniform() < probab :
             chain[i] = list(proposal)
+            print chain[i]
         else:
             chain[i] = list(chain[i-1])
+            print chain[i]
     return chain
 
 
@@ -195,11 +208,11 @@ output_folder = "test/out"
 
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
     # Set the range for proposal function
-low_limit = [0.01, 0.01, 0.1, 0.1, 1, 1, 17, 17, 1, 0.1, 0.5, 2]
-upper_limit = [0.5, 0.5, 8, 1, 100, 80, 28, 28, 50, 4, 0.99, 5]
-proposal_sd = [0.02, 0.015, 0.43, 0.1, 7, 4, 1.3, 1.3, 6.75, 0.19, 0.5, 0.167]
+#low_limit = [0.01, 0.01, 0.1, 0.1, 1, 1, 17, 17, 1, 0.1, 0.5, 2]
+#upper_limit = [0.5, 0.5, 8, 1, 100, 80, 28, 28, 50, 4, 0.99, 5]
+#proposal_sd = [0.02, 0.015, 0.43, 0.1, 7, 4, 1.3, 1.3, 6.75, 0.19, 0.5, 0.167]
 
-iterations = 20
+iterations = 10
 totalarea = 10336.99
 count = 1
 markup = ['@@ROOF@@','@@WALL@@','@@WIN@@', '@@SHGC@@','@@EPD@@','@@LPD@@',
@@ -231,7 +244,6 @@ print "Simulation time:",time.time() - start_time, "seconds"
 
 # Acceptance
 import itertools
-chain.sort()
 print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / float(iterations)
 
 # make CSV file

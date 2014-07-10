@@ -121,6 +121,7 @@ def run_metropolis_MCMC(path):
                 markup_value_pairs = generate_markup_value_pairs(markup, proposal)
                 path = prepare_job_folders(output_folder, template_idf_path, 
                     eplus_basic_folder, markup_value_pairs)
+                print "___________________________",i, "th iteration____________________________________"
                 prediction = run_eplus(path, totalarea)
                 proposal.append(prediction) 
                 break
@@ -132,8 +133,10 @@ def run_metropolis_MCMC(path):
         probab = min(1, math.exp(posterior(proposal) - posterior(chain[i-1])))
         if np.random.uniform() < probab :
             chain[i] = list(proposal)
+            print chain[i]
         else:
             chain[i] = list(chain[i-1])
+            print chain[i]
     return chain
 
 
@@ -180,7 +183,7 @@ startvalue = [0.116, 0.046, 11.67, 12.43, 21, 24, 14.37, 0.56, 0.72, 2.65]
 #upper_limit = [0.5, 0.5, 8, 1, 100, 80, 28, 28, 50, 4, 0.99, 5]
 #proposal_sd = [0.02, 0.015, 3.5, 3.5, 1.3, 1.3, 4, 0.15, 0.06, 0.15]
 
-iterations = 10
+iterations = 20
 totalarea = 10336.99
 count = 1
 markup = ['@@ROOF@@','@@WALL@@','@@EPD@@','@@LPD@@',
@@ -201,7 +204,6 @@ print "Simulation time:",time.time() - start_time, "seconds"
 
 # Acceptance
 import itertools
-chain.sort()
 print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / float(iterations)
 
 # make CSV file
