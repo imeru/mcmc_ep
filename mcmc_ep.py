@@ -35,6 +35,21 @@ def truncated_normal(myclip_min, myclip_max, mu, sigma, n=1):
     c = truncnorm.rvs(a, b, loc=mu, scale=sigma,size=n)
     return c
 
+# Make CSV file 
+
+def make_csv(chain):
+    with open(os.path.join(result_CSV_path), 'wb') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames = ['ROOF','WALL','WIN','SHGC','EPD','LPD',
+                    'HSP','CSP','OCC','INF','Boiler','COP','EUI'], delimiter = ',')
+        writer.writeheader()
+        writer = csv.writer(csvfile)
+        writer.writerows([chain])
+# Add
+def add_chain(chain):
+    writer = csv.writer(open(os.path.join(result_CSV_path), "ab"), delimiter=',', quotechar='|')
+    writer.writerow(chain)
+
+
 # Priors 
 def prior(param):
     ROOF = param[0]
@@ -106,7 +121,24 @@ def proposalfunction(low_limit, upper_limit, mean, proposal_sd):
         proposal.extend(truncated_normal(low_limit[i], upper_limit[i], mean[i], proposal_sd[i]).tolist())
     return proposal
 """        
-
+def generate_markup_value_pairs(markup, chain):
+    markup_value_pairs = []
+    markup_value_pairs.append(dict(zip(markup, chain)))
+    return markup_value_pairs
+"""
+[{'@@Boiler@@': 0.72,
+  '@@COP@@': 2.65,
+  '@@CSP@@': 24,
+  '@@EPD@@': 22.8,
+  '@@HSP@@': 21,
+  '@@INF@@': 0.675,
+  '@@LPD@@': 14.5,
+  '@@OCC@@': 23.4,
+  '@@ROOF@@': 0.09667,
+  '@@SHGC@@': 0.5,
+  '@@WALL@@': 0.055,
+  '@@WIN@@': 2.792}]
+"""
 
 #Run metro-polis MCMC ######################################TEST
 #def run_metropolis_MCMC(startvalue, iterations, output_folder, template_idf_path, eplus_basic_folder, 
@@ -128,7 +160,8 @@ def run_metropolis_MCMC(path):
     
     prediction = run_eplus(path, totalarea)
     chain[0].append(prediction)
-    
+    make_csv(chain[0])   
+
     for i in range(1,iterations):
         while True:
             try:
@@ -154,48 +187,15 @@ def run_metropolis_MCMC(path):
         if np.random.uniform() < probab :
             chain[i] = list(proposal)
             print chain[i]
+            add_chain(chain[i])
         else:
             chain[i] = list(chain[i-1])
             print chain[i]
+            add_chain(chain[i])
     return chain
 
 
-# To make chain list
-def make_chainlist(list):
-    chain = []
-    for item in list:
-        temp =[item]
-        chain.append(temp)
-    return chain
 
-
-    
-def make_csv(chain):
-    with open(os.path.join("test", 'chain_ep.csv'), 'wb') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames = ['ROOF','WALL','WIN','SHGC','EPD','LPD',
-                    'HSP','CSP','OCC','INF','Boiler','COP','EUI'], delimiter = ',')
-        writer.writeheader()
-        writer = csv.writer(csvfile)
-        writer.writerows(chain)
-
-def generate_markup_value_pairs(markup, chain):
-    markup_value_pairs = []
-    markup_value_pairs.append(dict(zip(markup, chain)))
-    return markup_value_pairs
-"""
-[{'@@Boiler@@': 0.72,
-  '@@COP@@': 2.65,
-  '@@CSP@@': 24,
-  '@@EPD@@': 22.8,
-  '@@HSP@@': 21,
-  '@@INF@@': 0.675,
-  '@@LPD@@': 14.5,
-  '@@OCC@@': 23.4,
-  '@@ROOF@@': 0.09667,
-  '@@SHGC@@': 0.5,
-  '@@WALL@@': 0.055,
-  '@@WIN@@': 2.792}]
-"""
 # Initial values __________________________________________________________________________
     # Observation value
 y = 1.619888
@@ -204,6 +204,7 @@ sd = 0.43
 template_idf_path = "test/campusbuilding.idf"
 eplus_basic_folder = "test/basic_files"
 output_folder = "test/out"
+result_CSV_path = 'test/chain_ep.csv'
 #sys.argv[1]
 
 startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72, 2.65]
@@ -212,7 +213,7 @@ startvalue = [0.09667, 0.055, 2.792, 0.5, 22.8, 14.5, 21, 24, 23.4, 0.675, 0.72,
 #upper_limit = [0.5, 0.5, 8, 1, 100, 80, 28, 28, 50, 4, 0.99, 5]
 #proposal_sd = [0.02, 0.015, 0.43, 0.1, 7, 4, 1.3, 1.3, 6.75, 0.19, 0.5, 0.167]
 
-iterations = 10
+iterations = 5
 totalarea = 10336.99
 count = 1
 markup = ['@@ROOF@@','@@WALL@@','@@WIN@@', '@@SHGC@@','@@EPD@@','@@LPD@@',
@@ -247,5 +248,5 @@ import itertools
 print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / float(iterations)
 
 # make CSV file
-make_csv(chain)
+#make_csv(chain)
 # ____________________________________________________________________________________

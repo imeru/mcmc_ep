@@ -19,6 +19,20 @@ from scipy.stats import triang, norm, truncnorm
 from runenergyplus import prepare_job_folders, run_eplus
 import csv
 
+# Make CSV file 
+def make_csv(chain):
+    with open(os.path.join(result_CSV_path), 'wb') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames = ['ROOF','WALL','EPD','LPD',
+                    'HSP','CSP','OCC','INF','Boiler','COP','EUI'], delimiter = ',')
+        writer.writeheader()
+        writer = csv.writer(csvfile)
+        writer.writerows([chain])
+# Add
+def add_chain(chain):
+    writer = csv.writer(open(os.path.join(result_CSV_path), "ab"), delimiter=',', quotechar='|')
+    writer.writerow(chain)
+
+
 def tri_logdensity(x, min, max, mode):
     loc = min
     scale = max - min
@@ -91,6 +105,24 @@ def proposalfunction(low_limit, upper_limit, mean, proposal_sd):
     return proposal
 """        
 
+def generate_markup_value_pairs(markup, chain):
+    markup_value_pairs = []
+    markup_value_pairs.append(dict(zip(markup, chain)))
+    return markup_value_pairs
+"""
+[{'@@Boiler@@': 0.72,
+  '@@COP@@': 2.65,
+  '@@CSP@@': 24,
+  '@@EPD@@': 22.8,
+  '@@HSP@@': 21,
+  '@@INF@@': 0.675,
+  '@@LPD@@': 14.5,
+  '@@OCC@@': 23.4,
+  '@@ROOF@@': 0.09667,
+  '@@SHGC@@': 0.5,
+  '@@WALL@@': 0.055,
+  '@@WIN@@': 2.792}]
+"""
 
 #Run metro-polis MCMC ######################################TEST
 
@@ -106,11 +138,11 @@ def run_metropolis_MCMC(path):
     chain[0][7] = startvalue[7]
     chain[0][8] = startvalue[8]
     chain[0][9] = startvalue[9]
-
     
     prediction = run_eplus(path, totalarea)
     chain[0].append(prediction)
-    
+    make_csv(chain[0]) 
+
     for i in range(1,iterations):
         while True:
             try:
@@ -134,39 +166,17 @@ def run_metropolis_MCMC(path):
         if np.random.uniform() < probab :
             chain[i] = list(proposal)
             print chain[i]
+            add_chain(chain[i])
         else:
             chain[i] = list(chain[i-1])
             print chain[i]
+            add_chain(chain[i])
     return chain
 
 
-   
-def make_csv(chain):
-    with open(os.path.join("test", 'chain_ep_p10.csv'), 'wb') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames = ['ROOF','WALL','EPD','LPD',
-                    'HSP','CSP','OCC','INF','Boiler','COP','EUI'], delimiter = ',')
-        writer.writeheader()
-        writer = csv.writer(csvfile)
-        writer.writerows(chain)
+ 
 
-def generate_markup_value_pairs(markup, chain):
-    markup_value_pairs = []
-    markup_value_pairs.append(dict(zip(markup, chain)))
-    return markup_value_pairs
-"""
-[{'@@Boiler@@': 0.72,
-  '@@COP@@': 2.65,
-  '@@CSP@@': 24,
-  '@@EPD@@': 22.8,
-  '@@HSP@@': 21,
-  '@@INF@@': 0.675,
-  '@@LPD@@': 14.5,
-  '@@OCC@@': 23.4,
-  '@@ROOF@@': 0.09667,
-  '@@SHGC@@': 0.5,
-  '@@WALL@@': 0.055,
-  '@@WIN@@': 2.792}]
-"""
+
 # Initial values __________________________________________________________________________
     # Observation value
 y = 1.619888
@@ -175,6 +185,7 @@ sd = 0.43
 template_idf_path = "test/campusbuilding_p10.idf"
 eplus_basic_folder = "test/basic_files"
 output_folder = "test/out"
+result_CSV_path = 'test/chain_ep_p10.csv'
 #sys.argv[1]
 
 startvalue = [0.116, 0.046, 11.67, 12.43, 21, 24, 14.37, 0.56, 0.72, 2.65]
@@ -183,16 +194,14 @@ startvalue = [0.116, 0.046, 11.67, 12.43, 21, 24, 14.37, 0.56, 0.72, 2.65]
 #upper_limit = [0.5, 0.5, 8, 1, 100, 80, 28, 28, 50, 4, 0.99, 5]
 #proposal_sd = [0.02, 0.015, 3.5, 3.5, 1.3, 1.3, 4, 0.15, 0.06, 0.15]
 
-iterations = 20
+iterations = 5
 totalarea = 10336.99
 count = 1
 markup = ['@@ROOF@@','@@WALL@@','@@EPD@@','@@LPD@@',
             '@@HSP@@','@@CSP@@','@@OCC@@','@@INF@@','@@Boiler@@','@@COP@@']
 
 
-
 markup_value_pairs = generate_markup_value_pairs(markup,startvalue)
-
 
 path = prepare_job_folders(output_folder, template_idf_path, eplus_basic_folder, markup_value_pairs)
 
@@ -207,5 +216,5 @@ import itertools
 print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / float(iterations)
 
 # make CSV file
-make_csv(chain)
+#make_csv(chain)
 # ____________________________________________________________________________________
