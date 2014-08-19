@@ -2,9 +2,9 @@
 # Markov Chain Monte Calro for EnergyPlus
 # 
 # code by Hyunwoo Lim (thanks to sangheestyle)
-# 07/07/2014
+# 08/18/2014
 # -------------------------------------------------------------------
-# UM Campus 
+# UM Campus type
 # This code is for 10 parameters. (exclude WIN, SHGC)
 # Parameter ranges are changed. 
 # You need to modify the idf file to insert mark. (e.g. @@WALL@@, @@WIN@@)
@@ -61,20 +61,19 @@ def prior(param):
     Boiler = param[8]
     COP = param[9]
 
-    ROOF_prior = tri_logdensity(x = ROOF, min = 0.01, max = 0.3, mode = 0.116)
-    WALL_prior = tri_logdensity(x = WALL, min = 0.01, max = 0.3, mode = 0.046)
+    ROOF_prior = tri_logdensity(x = ROOF, min = 0.01, max = 0.25, mode = 0.116)
+    WALL_prior = tri_logdensity(x = WALL, min = 0.01, max = 0.25, mode = 0.046)
     #WIN_prior = tri_logdensity(x = WIN, min = 1, max = 5, mode = 2.792)
     #SHGC_prior = tri_logdensity(x = SHGC, min = 0.1, max = 0.9, mode = 0.5)
-    EPD_prior = tri_logdensity(x = EPD, min = 1, max = 70, mode = 11.67)
-    LPD_prior = tri_logdensity(x = LPD, min = 1, max = 30, mode = 12.43)
-    HSP_prior = tri_logdensity(x = HSP, min = 17, max = 28, mode = 21)
-    CSP_prior = tri_logdensity(x = CSP, min = 17, max = 28, mode = 24)
+    EPD_prior = tri_logdensity(x = EPD, min = 1, max = 60, mode = 11.67)
+    LPD_prior = tri_logdensity(x = LPD, min = 1, max = 40, mode = 12.43)
+    HSP_prior = tri_logdensity(x = HSP, min = 17, max = 25, mode = 21)
+    CSP_prior = tri_logdensity(x = CSP, min = 20, max = 28, mode = 24)
     OCC_prior = tri_logdensity(x = OCC, min = 2, max = 56.7, mode = 14.37)
-    INF_prior = tri_logdensity(x = INF, min = 0.1, max = 1.5, mode = 0.56)
+    INF_prior = tri_logdensity(x = INF, min = 0.1, max = 1.3, mode = 0.56)
     Boiler_prior = tri_logdensity(x = Boiler, min = 0.5, max = 0.95, mode = 0.72)
     COP_prior = tri_logdensity(x = COP, min = 2, max = 4, mode = 2.65)
-    return ROOF_prior+WALL_prior+LPD_prior+LPD_prior+ \
-            HSP_prior+CSP_prior+OCC_prior+INF_prior+Boiler_prior+COP_prior
+    return ROOF_prior+WALL_prior+LPD_prior+LPD_prior+HSP_prior+CSP_prior+OCC_prior+INF_prior+Boiler_prior+COP_prior
 
 
 
@@ -93,8 +92,7 @@ def posterior(param):
 
 #Proposal function- .tolist:to change numpy.ndarray to list
 def proposalfunction(param):
-    return np.random.normal(loc=param, 
-        scale=[0.02, 0.015, 3.5, 3.5, 1.3, 1.3, 4, 0.15, 0.06, 0.15]).tolist()
+    return np.random.normal(loc=param, scale=[0.02, 0.02, 7, 3.5, 1, 1, 4, 0.1, 0.05, 0.1]).tolist()
  
 """
 #Proposal function using truncated_normal
@@ -127,7 +125,7 @@ def generate_markup_value_pairs(markup, chain):
 #Run metro-polis MCMC ######################################TEST
 
 def run_metropolis_MCMC(path):
-    chain = [[0 for x in xrange(10)] for x in xrange(iterations)]
+    chain = [[0 for x in xrange(10)] for x in xrange(iterations+1)]
     chain[0][0] = startvalue[0]
     chain[0][1] = startvalue[1]
     chain[0][2] = startvalue[2]
@@ -143,12 +141,12 @@ def run_metropolis_MCMC(path):
     chain[0].append(prediction)
     make_csv(chain[0]) 
 
-    for i in range(1,iterations):
+    for i in range(0,iterations):
         while True:
             try:
                 current_dir = os.getcwd()
                 #proposal = proposalfunction(low_limit, upper_limit, chain[i-1][:-1], proposal_sd)
-                proposal = proposalfunction(chain[i-1][:-1])
+                proposal = proposalfunction(chain[i][:-1])
 
                 markup_value_pairs = generate_markup_value_pairs(markup, proposal)
                 path = prepare_job_folders(output_folder, template_idf_path, 
@@ -162,15 +160,15 @@ def run_metropolis_MCMC(path):
                 pass
 
         
-        probab = min(1, math.exp(posterior(proposal) - posterior(chain[i-1])))
+        probab = math.exp(posterior(proposal) - posterior(chain[i]))
         if np.random.uniform() < probab :
-            chain[i] = list(proposal)
-            print chain[i]
-            add_chain(chain[i])
+            chain[i+1] = list(proposal)
+            print chain[i+1]
+            add_chain(chain[i+1])
         else:
-            chain[i] = list(chain[i-1])
-            print chain[i]
-            add_chain(chain[i])
+            chain[i+1] = list(chain[i])
+            print chain[i+1]
+            add_chain(chain[i+1])
     return chain
 
 
@@ -179,13 +177,22 @@ def run_metropolis_MCMC(path):
 
 # Initial values __________________________________________________________________________
     # Observation value
-y = 1.619888
-sd = 0.43
+y = 1.6198889
+"""
+1.6198889   1.9122587   1.3275191   1.4817689   2.1185286   
+1.7580089   1.1212492   1.2353392   1.8317579   2.2848811   
+1.5516997   1.4080199   2.0044386   1.688078    0.9548966   
+1.0485733   1.7227084   2.0576874   1.4455263   1.5858996   
+2.4273237   1.8709242   1.2833349   1.1820904   1.7942514   
+2.1912045   1.5170694   1.3688536   1.9564429   1.6538782
+"""
+
+sd = 0.1
     # Set pathes amd folder
 template_idf_path = "test/campusbuilding_p10.idf"
 eplus_basic_folder = "test/basic_files"
 output_folder = "test/out"
-result_CSV_path = 'test/chain_ep_p10.csv'
+result_CSV_path = 'test/chain_ep_campus_parametri_01.csv'
 #sys.argv[1]
 
 startvalue = [0.116, 0.046, 11.67, 12.43, 21, 24, 14.37, 0.56, 0.72, 2.65]
@@ -194,7 +201,7 @@ startvalue = [0.116, 0.046, 11.67, 12.43, 21, 24, 14.37, 0.56, 0.72, 2.65]
 #upper_limit = [0.5, 0.5, 8, 1, 100, 80, 28, 28, 50, 4, 0.99, 5]
 #proposal_sd = [0.02, 0.015, 3.5, 3.5, 1.3, 1.3, 4, 0.15, 0.06, 0.15]
 
-iterations = 5
+iterations = 500
 totalarea = 10336.99
 count = 1
 markup = ['@@ROOF@@','@@WALL@@','@@EPD@@','@@LPD@@',

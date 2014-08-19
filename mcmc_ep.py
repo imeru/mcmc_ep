@@ -23,15 +23,15 @@ import csv
 #global markup_values_pairs, markup_value_pairs, path, totalarea
 
 def tri_logdensity(x, min, max, mode):
-    loc = min
-    scale = max - min
-    c = (mode - min)/scale
+    loc = float(min)
+    scale = float(max) - float(min)
+    c = (float(mode) - float(min))/float(scale)
     log_density = triang.logpdf(x = x, c = c, loc = loc, scale = scale)
     return log_density
 
 def truncated_normal(myclip_min, myclip_max, mu, sigma, n=1):
-    a = (myclip_min - mu) / sigma
-    b = (myclip_max - mu) / sigma
+    a = (float(myclip_min) - float(mu)) / float(sigma)
+    b = (float(myclip_max) - float(mu)) / float(sigma)
     c = truncnorm.rvs(a, b, loc=mu, scale=sigma,size=n)
     return c
 
