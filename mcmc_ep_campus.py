@@ -179,7 +179,17 @@ def run_metropolis_MCMC(path):
     # Observation value
 y = 1.597867
 """
-For 30 campus buildings (remove max 3 and min 3 builidngs)
+=Non-Parametric method=
+For 30 campus buildings (remove max 3 and min 3 builidngs from 36 campus buildings)
+2.106 2.068 2.043 1.89  1.873 
+1.82  1.814 1.795 1.762 1.759
+1.736 1.716 1.711 1.682 1.676
+1.664 1.64  1.547 1.491 1.481
+1.437 1.43  1.418 1.381 1.264 
+1.24  1.162 1.161 1.141 1.028
+
+=Parametric method=
+For 30 campus buildings (quasi-random sampling)
 mean: 1.597867
 sd: 0.2880582
 1.597867	1.792159	1.403574	1.50608	    1.929234	
@@ -197,7 +207,7 @@ sd = 0.1
 template_idf_path = "test/campusbuilding_p10.idf"
 eplus_basic_folder = "test/basic_files"
 output_folder = "test/out"
-result_CSV_path = 'test/chain_ep_campus_parametri_01.csv'
+result_CSV_path = 'test/chain_ep_campus_nonparametri_01.csv'
 #sys.argv[1]
 
 startvalue = [0.116, 0.046, 11.67, 12.43, 21, 24, 14.37, 0.56, 0.72, 2.65]
