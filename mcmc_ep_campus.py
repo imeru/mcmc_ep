@@ -207,7 +207,7 @@ sd = 0.1
 template_idf_path = "test/campusbuilding_p10.idf"
 eplus_basic_folder = "test/basic_files"
 output_folder = "test/out"
-result_CSV_path = 'test/chain_ep_campus_nonparametri_01.csv'
+result_CSV_path = 'test/chain_ep_campus_nonparametric_01.csv'
 #sys.argv[1]
 
 startvalue = [0.116, 0.046, 11.67, 12.43, 21, 24, 14.37, 0.56, 0.72, 2.65]
