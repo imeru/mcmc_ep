@@ -892,7 +892,7 @@ Schedule:Compact,
     Through: 9/30,           !- Field 15
     For: WinterDesignDay,    !- Field 16
     Until: 24:00,            !- Field 17
-    @@CSP@@,                      !- Field 18
+    24,                      !- Field 18
     For: WeekEnds Holidays SummerDesignDay,  !- Field 19
     Until: 24:00,            !- Field 20
     28,                      !- Field 21
@@ -900,7 +900,7 @@ Schedule:Compact,
     Until: 06:00,            !- Field 23
     28,                      !- Field 24
     Until: 18:00,            !- Field 25
-    @@CSP@@,                      !- Field 26
+    24,                      !- Field 26
     Until: 24:00,            !- Field 27
     28,                      !- Field 28
     Through: 12/31,          !- Field 29
@@ -1177,7 +1177,7 @@ Material,
 Material,
     Wall Insulation [6],     !- Name
     MediumRough,             !- Roughness
-    @@WALL@@,                    !- Thickness {m}
+    0.046,                    !- Thickness {m}
     0.0450,                  !- Conductivity {W/m-K}
     265.0000,                !- Density {kg/m3}
     836.8000,                !- Specific Heat {J/kg-K}
@@ -1419,13 +1419,13 @@ Material:NoMass,
 WindowMaterial:SimpleGlazingSystem,
     Theoretical Glass [132], !- Name
     @@WIN@@,                   !- U-Factor {W/m2-K}
-    @@SHGC@@,                     !- Solar Heat Gain Coefficient
+    0.39,                     !- Solar Heat Gain Coefficient
     0.622;                   !- Visible Transmittance
 
 WindowMaterial:SimpleGlazingSystem,
     Theoretical Glass [146], !- Name
     @@WIN@@,                   !- U-Factor {W/m2-K}
-    @@SHGC@@,                     !- Solar Heat Gain Coefficient
+    0.39,                     !- Solar Heat Gain Coefficient
     0.622;                   !- Visible Transmittance
 
 
@@ -4102,7 +4102,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4124,7 +4124,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4146,7 +4146,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4168,7 +4168,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4190,7 +4190,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4212,7 +4212,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4234,7 +4234,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4256,7 +4256,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4278,7 +4278,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4300,7 +4300,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4322,7 +4322,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4344,7 +4344,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4366,7 +4366,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4388,7 +4388,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name
@@ -4410,7 +4410,7 @@ People,
     Area/Person,             !- Number of People Calculation Method
     ,                        !- Number of People
     ,                        !- People per Zone Floor Area {person/m2}
-    @@OCC@@,                   !- Zone Floor Area per Person {m2/person}
+    14.37,                   !- Zone Floor Area per Person {m2/person}
     0.3000,                  !- Fraction Radiant
     AUTOCALCULATE,           !- Sensible Heat Fraction
     ACTIVITY_SCH,            !- Activity Level Schedule Name

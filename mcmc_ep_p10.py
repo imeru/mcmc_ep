@@ -73,7 +73,7 @@ def prior(param):
     INF_prior = tri_logdensity(x = INF, min = 0.1, max = 1.5, mode = 0.56)
     Boiler_prior = tri_logdensity(x = Boiler, min = 0.5, max = 0.95, mode = 0.72)
     COP_prior = tri_logdensity(x = COP, min = 2, max = 4, mode = 2.65)
-    return ROOF_prior+WALL_prior+LPD_prior+LPD_prior+ \
+    return ROOF_prior+WALL_prior+EPD_prior+LPD_prior+ \
             HSP_prior+CSP_prior+OCC_prior+INF_prior+Boiler_prior+COP_prior
 
 

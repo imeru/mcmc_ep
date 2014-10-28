@@ -9431,3 +9431,291 @@ FuelFactors,
     ,                        !- Nuclear High Level Emission Factor Schedule Name
     0;                       !- Nuclear Low Level Emission Factor {m3/MJ}
 
+
+  FenestrationSurface:Detailed,
+    973414,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_3_SEC_1_Wall_1,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    8.626800000000,  !- Vertex 1 X-coordinate {m}
+    0.000000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    8.626800000000,  !- Vertex 2 X-coordinate {m}
+    0.000000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    63.263200000000,  !- Vertex 3 X-coordinate {m}
+    0.000000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    63.263200000000,  !- Vertex 4 X-coordinate {m}
+    0.000000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    B61BCD,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_2_SEC_1_Wall_1,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    8.626800000000,  !- Vertex 1 X-coordinate {m}
+    0.000000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    8.626800000000,  !- Vertex 2 X-coordinate {m}
+    0.000000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    63.263200000000,  !- Vertex 3 X-coordinate {m}
+    0.000000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    63.263200000000,  !- Vertex 4 X-coordinate {m}
+    0.000000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    AC49B4,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_1_SEC_1_Wall_1,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    8.626800000000,  !- Vertex 1 X-coordinate {m}
+    0.000000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    8.626800000000,  !- Vertex 2 X-coordinate {m}
+    0.000000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    63.263200000000,  !- Vertex 3 X-coordinate {m}
+    0.000000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    63.263200000000,  !- Vertex 4 X-coordinate {m}
+    0.000000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    992732,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_3_SEC_3_Wall_3,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    58.695500000000,  !- Vertex 1 X-coordinate {m}
+    4.570000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    58.695500000000,  !- Vertex 2 X-coordinate {m}
+    4.570000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    4.059100000000,  !- Vertex 3 X-coordinate {m}
+    4.570000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    4.059100000000,  !- Vertex 4 X-coordinate {m}
+    4.570000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    7B4E4D,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_2_SEC_3_Wall_3,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    58.695500000000,  !- Vertex 1 X-coordinate {m}
+    4.570000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    58.695500000000,  !- Vertex 2 X-coordinate {m}
+    4.570000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    4.059100000000,  !- Vertex 3 X-coordinate {m}
+    4.570000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    4.059100000000,  !- Vertex 4 X-coordinate {m}
+    4.570000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    4558B8,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_1_SEC_3_Wall_3,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    58.695500000000,  !- Vertex 1 X-coordinate {m}
+    4.570000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    58.695500000000,  !- Vertex 2 X-coordinate {m}
+    4.570000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    4.059100000000,  !- Vertex 3 X-coordinate {m}
+    4.570000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    4.059100000000,  !- Vertex 4 X-coordinate {m}
+    4.570000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    B3454C,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_3_SEC_2_Wall_1,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    0.000000000000,  !- Vertex 1 X-coordinate {m}
+    4.314000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    0.000000000000,  !- Vertex 2 X-coordinate {m}
+    4.314000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    0.000000000000,  !- Vertex 3 X-coordinate {m}
+    31.636000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    0.000000000000,  !- Vertex 4 X-coordinate {m}
+    31.636000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    112376,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_2_SEC_2_Wall_1,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    0.000000000000,  !- Vertex 1 X-coordinate {m}
+    4.314000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    0.000000000000,  !- Vertex 2 X-coordinate {m}
+    4.314000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    0.000000000000,  !- Vertex 3 X-coordinate {m}
+    31.636000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    0.000000000000,  !- Vertex 4 X-coordinate {m}
+    31.636000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    14048D,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_1_SEC_2_Wall_1,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    0.000000000000,  !- Vertex 1 X-coordinate {m}
+    4.314000000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    0.000000000000,  !- Vertex 2 X-coordinate {m}
+    4.314000000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    0.000000000000,  !- Vertex 3 X-coordinate {m}
+    31.636000000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    0.000000000000,  !- Vertex 4 X-coordinate {m}
+    31.636000000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    8A8C01,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_3_SEC_4_Wall_4,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    0.000000000000,  !- Vertex 1 X-coordinate {m}
+    31.632100000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    0.000000000000,  !- Vertex 2 X-coordinate {m}
+    31.632100000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    0.000000000000,  !- Vertex 3 X-coordinate {m}
+    4.310100000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    0.000000000000,  !- Vertex 4 X-coordinate {m}
+    4.310100000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    500C0A,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_2_SEC_4_Wall_4,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    0.000000000000,  !- Vertex 1 X-coordinate {m}
+    31.632100000000,  !- Vertex 1 Y-coordinate {m}
+    2.910000000000,  !- Vertex 1 Z-coordinate {m}
+    0.000000000000,  !- Vertex 2 X-coordinate {m}
+    31.632100000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    0.000000000000,  !- Vertex 3 X-coordinate {m}
+    4.310100000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    0.000000000000,  !- Vertex 4 X-coordinate {m}
+    4.310100000000,  !- Vertex 4 Y-coordinate {m}
+    2.910000000000;  !- Vertex 4 Z-coordinate {m}
+
+  FenestrationSurface:Detailed,
+    6D3FD1,  !- Name
+    Window,  !- Surface Type
+    std_window_UValue_3.237_SHGC_0.49_VT_0.622,  !- Construction Name
+    ZN_1_FLR_1_SEC_4_Wall_4,  !- Building Surface Name
+    ,  !- Outside Boundary Condition Object
+    ,  !- View Factor to Ground
+    ,  !- Shading Control Name
+    ,  !- Frame and Divider Name
+    ,  !- Multiplier
+    4,  !- Number of Vertices
+    0.000000000000,  !- Vertex 1 X-coordinate {m}
+    31.632100000000,  !- Vertex 1 Y-coordinate {m}
+    3.000000000000,  !- Vertex 1 Z-coordinate {m}
+    0.000000000000,  !- Vertex 2 X-coordinate {m}
+    31.632100000000,  !- Vertex 2 Y-coordinate {m}
+    1.000000000000,  !- Vertex 2 Z-coordinate {m}
+    0.000000000000,  !- Vertex 3 X-coordinate {m}
+    4.310100000000,  !- Vertex 3 Y-coordinate {m}
+    1.000000000000,  !- Vertex 3 Z-coordinate {m}
+    0.000000000000,  !- Vertex 4 X-coordinate {m}
+    4.310100000000,  !- Vertex 4 Y-coordinate {m}
+    3.000000000000;  !- Vertex 4 Z-coordinate {m}
