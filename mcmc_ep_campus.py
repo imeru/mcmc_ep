@@ -240,3 +240,4 @@ print "Acceptance: ",len(list(chain for chian,_ in itertools.groupby(chain))) / 
 # make CSV file
 #make_csv(chain)
 # ____________________________________________________________________________________
+# python mcmc_ep_campus.py
